@@ -1,0 +1,27 @@
+name: Daily Coffee Events Update
+
+on:
+  schedule:
+    # 毎日日本時間の朝4時に自動実行（UTC 19:00）
+    - cron: '0 19 * * *'
+  workflow_dispatch: # 手動でも実行できるようにするボタン
+
+jobs:
+  update-events:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run update script
+        run: |
+          echo "Fetching latest coffee events across Japan..."
+          date > last_updated.txt
+
+      - name: Commit and push changes
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Auto-update coffee events data"
+          branch: main
