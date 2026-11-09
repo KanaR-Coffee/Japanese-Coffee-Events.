@@ -1,16 +1,18 @@
 import json
+import re
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime
 
 
+def clean_title(title):
+  # タイトル末尾の媒体名（例: " - 週末、金沢。", " - Yahoo!ニュース" など）を自動カット
+  title = re.sub(r'\s*[-|–]\s*[^—–\-]+$', '', title)
+  return title.strip()
+
+
 def fetch_live_coffee_events():
-  """インターネット上の公開情報からコーヒーイベントの最新動向を
-
-  自動でクロールし、47都道府県すべてを対象に判定・抽出する関数
-  """
   events = []
-
   url = 'https://news.google.com/rss/search?q=%E3%82%B3%E3%83%BC%E3%83%92%E3%83%BC%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88&hl=ja&gl=JP&ceid=JP:ja'
 
   try:
@@ -21,7 +23,7 @@ def fetch_live_coffee_events():
     root = ET.fromstring(xml_data)
     items = root.findall('.//item')
 
-    # 47都道府県の完全なリスト（「県」「府」「都」「道」なしでもヒットするように定義）
+    # 47都道府県のリスト
     prefectures = [
         '北海道',
         '青森',
@@ -72,8 +74,41 @@ def fetch_live_coffee_events():
         '沖縄',
     ]
 
-    for idx, item in enumerate(items[:20], start=1):
-      title = item.find('title').text if item.find('title') is not None else ''
+    # 主要都市から都道府県への逆引き辞書
+    city_to_pref = {
+        '札幌': '北海道',
+        '仙台': '宮城',
+        '金沢': '石川',
+        '横浜': '神奈川',
+        '名古屋': '愛知',
+        '京都': '京都',
+        '大阪': '大阪',
+        '神戸': '兵庫',
+        '広島': '広島',
+        '福岡': '福岡',
+        '博多': '福岡',
+        '那覇': '沖縄',
+        '軽井沢': '長野',
+    }
+
+    # コーヒーイベントに関連するキーワード（これが含まれない関係のない記事は弾く）
+    keywords = [
+        'コーヒー',
+        '珈琲',
+        'フェス',
+        'マルシェ',
+        'イベント',
+        '試飲',
+        '出店',
+        'ロースター',
+        'カフェ',
+    ]
+
+    valid_count = 0
+    for item in items:
+      raw_title = (
+          item.find('title').text if item.find('title') is not None else ''
+      )
       link = item.find('link').text if item.find('link') is not None else ''
       pub_date = (
           item.find('pubDate').text
@@ -86,59 +121,100 @@ def fetch_live_coffee_events():
           else ''
       )
 
-      # 47都道府県のいずれかに完全一致するかを走査して判定
+      # 関連性の薄いニュース記事を除外するフィルター
+      if not any(kw in raw_title or kw in description for kw in keywords):
+        continue
+
+      title = clean_title(raw_title)
+
+    # 地域判定（都道府県名または主要都市名から特定）
       region = '全国'
-      for pref in prefectures:
-        if pref in title or pref in description:
+      # まず都市名からチェック
+      for city, pref in city_to_pref.items():
+        if city in title or city in description:
           region = pref
           break
+      # 次に都道府県名からチェック
+      if region == '全国':
+        for pref in prefectures:
+          if pref in title or pref in description:
+            region = pref
+            break
 
+      # イベントの種別を判定
+      ev_type = 'フェスティバル'
+      if 'マーケット' in title or 'マルシェ' in title:
+        ev_type = 'マーケット'
+      elif 'ポップアップ' in title or '出店' in title:
+        ev_type = 'ポップアップ'
+      elif '試飲' in title or 'カッピング' in title:
+        ev_type = '試飲会'
+
+      # 画像（プレースホルダーとして美しいコーヒー画像を動的に割り当て）
+      images = [
+          'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80',
+          'https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80',
+          'https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80',
+          'https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80',
+      ]
+      img_url = images[valid_count % len(images)]
+
+      valid_count += 1
       events.append({
-          'id': idx,
+          'id': valid_count,
           'title': title,
           'region': region,
-          'type': 'フェスティバル',
+          'type': ev_type,
           'date': pub_date[:16] if pub_date else '近日開催',
-          'location': f'{region} 特設会場 / オンライン',
+          'location': (
+              f'{region} 特設会場 / 周辺エリア'
+              if region != '全国'
+              else '全国各地'
+          ),
           'organizer': '自動巡回クローラー',
           'desc': (
-              description[:100] + '...'
+              description[:90] + '...'
               if description
               else '詳細情報は公式サイトをご確認ください。'
           ),
           'url': link,
+          'image': img_url,
       })
 
+      # 最大40件まで取得
+      if valid_count >= 40:
+        break
+
   except Exception as e:
-    print(f'データ自動収集中にエラーが発生しました: {e}')
+    print(f'エラー: {e}')
 
   if not events:
     events.append({
         'id': 1,
-        'title': '自動同期システム稼働中（最新情報取得中）',
+        'title': '最新のコーヒーイベント情報を収集中です',
         'region': '全国',
         'type': 'フェスティバル',
         'date': datetime.now().strftime('%Y/%m/%d'),
         'location': '日本全国',
         'organizer': 'BrewSync System',
-        'desc': '現在、自動巡回クローラーが最新のイベント情報を収集中です。',
+        'desc': '自動巡回システムが最新のトピックをスキャンしています。',
         'url': 'https://www.google.com/search?q=コーヒーイベント',
+        'image': (
+            'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80'
+        ),
     })
 
   return events
 
 
 def main():
-  print(f'[{datetime.now()}] 47都道府県対応・自動巡回クローラーを起動しました...')
+  print(f'[{datetime.now()}] 高精度・自動巡回エンジン稼働中...')
   live_events = fetch_live_coffee_events()
 
   with open('events.json', 'w', encoding='utf-8') as f:
     json.dump(live_events, f, ensure_ascii=False, indent=4)
 
-  print(
-      f'[{datetime.now()}] 成功: 外部から {len(live_events)}'
-      ' 件の最新イベント情報を自動取得し、events.jsonを更新しました。'
-  )
+  print(f'[{datetime.now()}] 成功: {len(live_events)} 件のイベントを同期しました。')
 
 
 if __name__ == '__main__':
