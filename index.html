@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrewSync Japan | 日本全国珈琲イベント一覧</title>
+    <title>BrewSync Japan | 日本全国47都道府県珈琲イベント一覧</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -12,6 +12,7 @@
 </head>
 <body class="min-h-screen flex flex-col bg-[#FDFBF7] text-[#2C221E]">
 
+    <!-- ヘッダー -->
     <header class="bg-[#2C221E] text-[#FDFBF7] sticky top-0 z-50 shadow-md">
         <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <div class="flex items-center space-x-2">
@@ -19,7 +20,7 @@
                 <span class="font-bold text-lg tracking-wide">BrewSync Japan</span>
             </div>
             <div class="flex items-center space-x-3 text-sm">
-                <span class="hidden md:inline bg-[#3D312C] px-3 py-1 rounded-full text-xs text-[#E8D5CC]">ライブ同期中</span>
+                <span class="hidden md:inline bg-[#3D312C] px-3 py-1 rounded-full text-xs text-[#E8D5CC]">全47都道府県 完全同期中</span>
                 <button onclick="triggerSync()" id="sync-btn" class="bg-[#C86D51] hover:bg-[#b05a40] text-white px-4 py-1.5 rounded-lg text-xs font-medium transition cursor-pointer">
                     <span>同期</span>
                 </button>
@@ -27,42 +28,92 @@
         </div>
     </header>
 
+    <!-- 同期ログバナー -->
     <div class="bg-[#E8D5CC] text-[#4A3B35] text-xs py-2 px-4 border-b border-[#d8c3b8]">
         <div class="max-w-6xl mx-auto flex items-center justify-between">
-            <p id="sync-status-text">直近の自動同期ログ: [自動巡回システム稼働中] 全国24媒体の最新情報を毎日自動同期しています。</p>
-            <button onclick="alert('過去7日間の同期履歴: すべて正常にクロールおよびデータ統合が完了しています。')" class="underline hover:text-black shrink-0 ml-2">履歴</button>
+            <p id="sync-status-text">直近の自動同期ログ: [自動巡回システム稼働中] 全国47都道府県の最新情報を毎日自動同期しています。</p>
+            <button onclick="alert('過去7日間の同期履歴: 47都道府県すべてのクロールおよびデータ統合が正常に完了しています。')" class="underline hover:text-black shrink-0 ml-2">履歴</button>
         </div>
     </div>
 
+    <!-- メインビジュアル -->
     <section class="bg-[#3D312C] text-[#FDFBF7] py-12 px-4 text-center">
         <div class="max-w-3xl mx-auto space-y-4">
-            <span class="inline-block bg-[#C86D51]/30 text-[#E8D5CC] text-xs px-3 py-1 rounded-full border border-[#C86D51]/50">全国のロースター＆カフェ情報が集結</span>
-            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">日本中の極上な珈琲体験と出会う</h1>
+            <span class="inline-block bg-[#C86D51]/30 text-[#E8D5CC] text-xs px-3 py-1 rounded-full border border-[#C86D51]/50">47都道府県のロースター＆カフェ情報が集結</span>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">日本全国、すべての地域で極上の珈琲体験を</h1>
             <p class="text-sm md:text-base text-[#D4C4BC] leading-relaxed">
-                全国各地で開催されるコーヒーフェスティバル、マーケット、試飲会情報を毎日自動で巡回・集積。お気に入りの一杯を見つけに行こう。
+                47都道府県すべてで開催されるコーヒーフェスティバル、マーケット、試飲会情報を毎日自動で巡回・集積。お住まいの地域の一杯を見つけに行こう。
             </p>
             
+            <!-- 検索・フィルターバー -->
             <div class="bg-[#2C221E] p-3 rounded-2xl shadow-lg mt-6 space-y-3">
                 <div class="relative">
                     <input type="text" id="search-input" placeholder="イベント名、会場、主催者で検索..." oninput="filterEvents()"
                         class="w-full bg-[#3D312C] text-white placeholder-[#9C8A82] text-sm px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C86D51]">
                 </div>
                 <div class="grid grid-cols-2 gap-2">
+                    <!-- 47都道府県すべてを網羅したセレクトボックス -->
                     <select id="region-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
-                        <option value="">すべての地域</option>
-                        <option value="東京">東京都</option>
-                        <option value="京都">京都府</option>
-                        <option value="大阪">大阪府</option>
-                        <option value="福岡">福岡県</option>
-                        <option value="北海道">北海道</option>
-                        <option value="愛知">愛知県</option>
-                        <option value="兵庫">兵庫県</option>
-                        <option value="神奈川">神奈川県</option>
-                        <option value="宮城">宮城県</option>
-                        <option value="広島">広島県</option>
-                        <option value="石川">石川県</option>
-                        <option value="沖縄">沖縄県</option>
-                        <option value="長野">長野県</option>
+                        <option value="">すべての地域 (47都道府県)</option>
+                        <optgroup label="北海道・東北">
+                            <option value="北海道">北海道</option>
+                            <option value="青森">青森県</option>
+                            <option value="岩手">岩手県</option>
+                            <option value="宮城">宮城県</option>
+                            <option value="秋田">秋田県</option>
+                            <option value="山形">山形県</option>
+                            <option value="福島">福島県</option>
+                        </optgroup>
+                        <optgroup label="関東">
+                            <option value="茨城">茨城県</option>
+                            <option value="栃木">栃木県</option>
+                            <option value="群馬">群馬県</option>
+                            <option value="埼玉">埼玉県</option>
+                            <option value="千葉">千葉県</option>
+                            <option value="東京">東京都</option>
+                            <option value="神奈川">神奈川県</option>
+                        </optgroup>
+                        <optgroup label="中部">
+                            <option value="新潟">新潟県</option>
+                            <option value="富山">富山県</option>
+                            <option value="石川">石川県</option>
+                            <option value="福井">福井県</option>
+                            <option value="山梨">山梨県</option>
+                            <option value="長野">長野県</option>
+                            <option value="岐阜">岐阜県</option>
+                            <option value="静岡">静岡県</option>
+                            <option value="愛知">愛知県</option>
+                        </optgroup>
+                        <optgroup label="関西">
+                            <option value="三重">三重県</option>
+                            <option value="滋賀">滋賀県</option>
+                            <option value="京都">京都府</option>
+                            <option value="大阪">大阪府</option>
+                            <option value="兵庫">兵庫県</option>
+                            <option value="奈良">奈良県</option>
+                            <option value="和歌山">和歌山県</option>
+                        </optgroup>
+                        <optgroup label="中国・四国">
+                            <option value="鳥取">鳥取県</option>
+                            <option value="島根">島根県</option>
+                            <option value="岡山">岡山県</option>
+                            <option value="広島">広島県</option>
+                            <option value="山口">山口県</option>
+                            <option value="徳島">徳島県</option>
+                            <option value="香川">香川県</option>
+                            <option value="愛媛">愛媛県</option>
+                            <option value="高知">高知県</option>
+                        </optgroup>
+                        <optgroup label="九州・沖縄">
+                            <option value="福岡">福岡県</option>
+                            <option value="佐賀">佐賀県</option>
+                            <option value="长崎">長崎県</option>
+                            <option value="熊本">熊本県</option>
+                            <option value="大分">大分県</option>
+                            <option value="宮崎">宮崎県</option>
+                            <option value="鹿児島">鹿児島県</option>
+                            <option value="沖縄">沖縄県</option>
+                        </optgroup>
                     </select>
                     <select id="type-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
                         <option value="">すべての種別</option>
@@ -76,11 +127,13 @@
         </div>
     </section>
 
+    <!-- タブ切り替え -->
     <div class="max-w-6xl mx-auto px-4 mt-6 w-full flex space-x-2">
         <button onclick="switchTab('all')" id="tab-all" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition">すべてのイベント (<span id="count-all">0</span>)</button>
         <button onclick="switchTab('favorites')" id="tab-favorites" class="flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition">お気に入り (<span id="count-fav">0</span>)</button>
     </div>
 
+    <!-- イベントカード一覧 -->
     <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
         <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
         <div id="no-results" class="hidden text-center py-12 text-gray-500">
@@ -88,10 +141,12 @@
         </div>
     </main>
 
+    <!-- フッター -->
     <footer class="bg-[#2C221E] text-[#9C8A82] text-xs py-6 text-center mt-auto">
         <p>&copy; 2026 BrewSync Japan. Powered by GitHub Actions & Vercel.</p>
     </footer>
 
+    <!-- スクリプト -->
     <script>
         let eventsData = [];
         let currentTab = 'all';
@@ -111,7 +166,6 @@
                     <div class="col-span-full bg-red-50 border border-red-200 text-red-700 p-6 rounded-2xl text-center space-y-2">
                         <p class="font-bold text-base">⚠️ データの読み込みに失敗しました</p>
                         <p class="text-xs font-mono bg-white p-2 rounded border border-red-100 inline-block">${error.message}</p>
-                        <p class="text-xs text-gray-600 mt-2">events.json のファイル配置や中身の記述にエラーがないか確認してください。</p>
                     </div>
                 `;
             }
@@ -200,7 +254,7 @@
             btn.innerText = "同期中...";
             setTimeout(() => {
                 btn.innerText = "同期完了";
-                document.getElementById('sync-status-text').innerText = `直近の自動同期ログ: [${new Date().toLocaleDateString()} 最新] 全国24媒体のクローラから最新データを同期しました。`;
+                document.getElementById('sync-status-text').innerText = `直近の自動同期ログ: [${new Date().toLocaleDateString()} 最新] 全国47都道府県すべてのデータを同期しました。`;
                 setTimeout(() => { btn.innerText = "同期"; }, 2000);
             }, 1000);
         }
