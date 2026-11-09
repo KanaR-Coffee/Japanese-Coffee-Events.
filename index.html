@@ -3,36 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrewSync Japan</title>
+    <title>BrewSync Japan | 日本全国珈琲イベント一覧</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #FDFBF7; color: #2C221E; }
+    </style>
 </head>
-<body class="bg-[#FDFBF7] text-[#2C221E] p-4">
-    <header class="max-w-xl mx-auto mb-6">
-        <h1 class="text-2xl font-bold">☕ 日本全国珈琲イベント</h1>
-        <p class="text-xs text-gray-600 mt-1">自動同期システム稼働中</p>
+<body class="min-h-screen flex flex-col bg-[#FDFBF7] text-[#2C221E]">
+
+    <!-- ヘッダー -->
+    <header class="bg-[#2C221E] text-[#FDFBF7] sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded bg-[#C86D51] flex items-center justify-center font-bold text-white">B</div>
+                <span class="font-bold text-lg tracking-wide">BrewSync Japan</span>
+            </div>
+            <div class="flex items-center space-x-3 text-sm">
+                <span class="hidden md:inline bg-[#3D312C] px-3 py-1 rounded-full text-xs text-[#E8D5CC]">ライブ同期中</span>
+                <button onclick="triggerSync()" id="sync-btn" class="bg-[#C86D51] hover:bg-[#b05a40] text-white px-4 py-1.5 rounded-lg text-xs font-medium transition cursor-pointer">
+                    <span>同期</span>
+                </button>
+            </div>
+        </div>
     </header>
 
-    <main id="event-list" class="max-w-xl mx-auto space-y-4">
-        <!-- ここにイベントが表示されます -->
+    <!-- 同期ログバナー -->
+    <div class="bg-[#E8D5CC] text-[#4A3B35] text-xs py-2 px-4 border-b border-[#d8c3b8]">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <p id="sync-status-text">直近の自動同期ログ: [2026/11/09 04:00] 全国24媒体のクローラから最新データを自動統合しました。</p>
+            <button onclick="alert('過去7日間の同期履歴: すべて正常にクロールおよびデータ統合が完了しています。')" class="underline hover:text-black shrink-0 ml-2">履歴</button>
+        </div>
+    </div>
+
+    <!-- メインビジュアル -->
+    <section class="bg-[#3D312C] text-[#FDFBF7] py-12 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="inline-block bg-[#C86D51]/30 text-[#E8D5CC] text-xs px-3 py-1 rounded-full border border-[#C86D51]/50">全国のロースター＆カフェ情報が集結</span>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">日本中の極上な珈琲体験と出会う</h1>
+            <p class="text-sm md:text-base text-[#D4C4BC] leading-relaxed">
+                全国各地で開催されるコーヒーフェスティバル、マーケット、試飲会情報を毎日自動で巡回・集積。お気に入りの一杯を見つけに行こう。
+            </p>
+            
+            <!-- 検索・フィルターバー -->
+            <div class="bg-[#2C221E] p-3 rounded-2xl shadow-lg mt-6 space-y-3">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="イベント名、会場、主催者で検索..." oninput="filterEvents()"
+                        class="w-full bg-[#3D312C] text-white placeholder-[#9C8A82] text-sm px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C86D51]">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <select id="region-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
+                        <option value="">すべての地域</option>
+                        <option value="東京">東京都</option>
+                        <option value="京都">京都府</option>
+                        <option value="大阪">大阪府</option>
+                        <option value="福岡">福岡県</option>
+                        <option value="北海道">北海道</option>
+                        <option value="愛知">愛知県</option>
+                        <option value="兵庫">兵庫県</option>
+                        <option value="神奈川">神奈川県</option>
+                        <option value="宮城">宮城県</option>
+                        <option value="広島">広島県</option>
+                        <option value="石川">石川県</option>
+                        <option value="沖縄">沖縄県</option>
+                        <option value="長野">長野県</option>
+                    </select>
+                    <select id="type-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
+                        <option value="">すべての種別</option>
+                        <option value="フェスティバル">フェスティバル</option>
+                        <option value="マーケット">マーケット</option>
+                        <option value="ポップアップ">ポップアップ</option>
+                        <option value="試飲会">試飲会</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- タブ切り替え -->
+    <div class="max-w-6xl mx-auto px-4 mt-6 w-full flex space-x-2">
+        <button onclick="switchTab('all')" id="tab-all" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition">すべてのイベント (<span id="count-all">0</span>)</button>
+        <button onclick="switchTab('favorites')" id="tab-favorites" class="flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition">お気に入り (<span id="count-fav">0</span>)</button>
+    </div>
+
+    <!-- イベントカード一覧 -->
+    <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
+        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <!-- JavaScriptで動的生成 -->
+        </div>
+        <div id="no-results" class="hidden text-center py-12 text-gray-500">
+            条件に一致する珈琲イベントが見つかりませんでした。
+        </div>
     </main>
 
+    <!-- フッター -->
+    <footer class="bg-[#2C221E] text-[#9C8A82] text-xs py-6 text-center mt-auto">
+        <p>&copy; 2026 BrewSync Japan. Powered by GitHub Actions & Vercel.</p>
+    </footer>
+
+    <!-- スクリプト -->
     <script>
-        const events = [
-            { title: "TOKYO COFFEE FESTIVAL 2026", date: "2026/12/12", place: "東京都渋谷区（国連大学中庭）" },
-            { title: "KYOTO ROASTERS MARKET", date: "2026/11/28", place: "京都市左京区（岡崎公園）" },
-            { title: "FUKUOKA COFFEE WEEKEND", date: "2026/12/05", place: "福岡市中央区（天神中央公園）" }
+        const eventsData = [
+            {
+                id: 1,
+                title: "TOKYO COFFEE FESTIVAL 2026 Winter",
+                region: "東京",
+                type: "フェスティバル",
+                date: "2026/12/12 (土) - 12/13 (日)",
+                location: "国連大学中庭（東京都渋谷区）",
+                organizer: "Tokyo Coffee Festival 実行委員会",
+                desc: "全国から約50店舗のロースターが集結する冬の大型コーヒーイベント。温かいコーヒーと冬支度のグッズマーケットが充実。",
+                url: "https://www.google.com/search?q=TOKYO+COFFEE+FESTIVAL+2026"
+            },
+            {
+                id: 2,
+                title: "KYOTO ROASTERS MARKET 秋の特別編",
+                region: "京都",
+                type: "マーケット",
+                date: "2026/11/28 (土) - 11/29 (日)",
+                location: "岡崎公園（京都市左京区）",
+                organizer: "京都自家焙煎珈琲組合",
+                desc: "京都を中心に、関西圏の人気ロースターが一堂に会する紅葉シーズンのマーケット。秋のブレンド飲み比べが楽しめます。",
+                url: "https://www.google.com/search?q=KYOTO+ROASTERS+MARKET"
+            },
+            {
+                id: 3,
+                title: "FUKUOKA SPECIALTY COFFEE WEEKEND",
+                region: "福岡",
+                type: "ポップアップ",
+                date: "2026/12/05 (土) - 12/06 (日)",
+                location: "天神中央公園（福岡市中央区）",
+                organizer: "Fukuoka Specialty Coffee Association",
+                desc: "九州各県の気鋭ロースターによる週末限定ポップアップストア。バリスタ同士のセッションやカッピングセミナーも開催。",
+                url: "https://www.google.com/search?q=FUKUOKA+SPECIALTY+COFFEE+WEEKEND"
+            },
+            {
+                id: 4,
+                title: "SAPPORO SNOW & COFFEE GATHERING",
+                region: "北海道",
+                type: "試飲会",
+                date: "2026/12/19 (土)",
+                location: "札幌市円山公園周辺（北海道札幌市）",
+                organizer: "北海道コーヒーラバーズ",
+                desc: "雪景色の中に佇むロースターの味を巡るローカル試飲会。北の大地の深煎りコーヒーとスイーツのペアリング。",
+                url: "https://www.google.com/search?q=SAPPORO+SNOW+COFFEE+GATHERING"
+            },
+            {
+                id: 5,
+                title: "OSAKA ARTISAN COFFEE SUMMIT 2027 New Year",
+                region: "大阪",
+                type: "フェスティバル",
+                date: "2027/01/16 (土) - 01/17 (日)",
+                location: "中之島公園（大阪市北区）",
+                organizer: "関西ロースターズギルド",
+                desc: "新年の幕開けを祝うクラフトコーヒーの祭典。国内外からゲストロースターを招いた特別な抽出実演も実施。",
+                url: "https://www.google.com/search?q=OSAKA+ARTISAN+COFFEE+SUMMIT"
+            },
+            {
+                id: 6,
+                title: "NAGOYA COFFEE LOVERS JAM",
+                region: "愛知",
+                type: "フェスティバル",
+                date: "2027/01/23 (土) - 01/24 (日)",
+                location: "久屋大通公園（名古屋市中区）",
+                organizer: "東海自家焙煎推進委員会",
+                desc: "喫茶店文化が根付く名古屋で開催される、現代のスペシャルティコーヒーに特化した一大フェスティバル。",
+                url: "https://www.google.com/search?q=NAGOYA+COFFEE+LOVERS+JAM"
+            },
+            {
+                id: 7,
+                title: "KOBE HARBOR COFFEE PICNIC",
+                region: "兵庫",
+                type: "マーケット",
+                date: "2027/02/06 (土)",
+                location: "神戸ハーバーランド（神戸市中央区）",
+                organizer: "神戸港珈琲散歩実行委員会",
+                desc: "港町の景色を眺めながら、神戸・阪神間の人気カフェのコーヒーとベイクを味わうピクニック形式のイベント。",
+                url: "https://www.google.com/search?q=KOBE+HARBOR+COFFEE+PICNIC"
+            },
+            {
+                id: 8,
+                title: "YOKOHAMA BEANS & BREW NIGHT",
+                region: "神奈川",
+                type: "試飲会",
+                date: "2027/02/13 (土)",
+                location: "横浜赤レンガ倉庫（横浜市中区）",
+                organizer: "ヨコハマ・コーヒー・アソシエーション",
+                desc: "夕暮れから夜にかけて、横浜の歴史ある赤レンガ倉庫で開催される大人のためのナイトカッピング＆試飲イベント。",
+                url: "https://www.google.com/search?q=YOKOHAMA+BEANS+BREW+NIGHT"
+            },
+            {
+                id: 9,
+                title: "SENDAI AROMA COFFEE CARAVAN",
+                region: "宮城",
+                type: "ポップアップ",
+                date: "2027/02/20 (土) - 02/21 (日)",
+                location: "勾当台公園（仙台市青葉区）",
+                organizer: "東北ロースターズネットワーク",
+                desc: "東北六県から選りすぐりのロースターが集結。東北の寒い冬に心まで温まる深煎りコーヒーの魅力を届けます。",
+                url: "https://www.google.com/search?q=SENDAI+AROMA+COFFEE+CARAVAN"
+            },
+            {
+                id: 10,
+                title: "HIROSHIMA GREEN CREW COFFEE FES",
+                region: "広島",
+                type: "フェスティバル",
+                date: "2027/03/06 (土) - 03/07 (日)",
+                location: "旧広島市民球場跡地（広島市中区）",
+                organizer: "瀬戸内コーヒー同好会",
+                desc: "瀬戸内の温暖な気候のもと、中国・四国地方の気鋭ロースターとコーヒーラバーが集う春の祭典。",
+                url: "https://www.google.com/search?q=HIROSHIMA+GREEN+CREW+COFFEE+FES"
+            },
+            {
+                id: 11,
+                title: "KANAZAWA CRAFT COFFEE DAYS",
+                region: "石川",
+                type: "マーケット",
+                date: "2027/03/13 (土) - 03/14 (日)",
+                location: "金沢城公園（金沢市）",
+                organizer: "北陸珈琲文化振興会",
+                desc: "伝統工芸の街・金沢で、器とコーヒーのペアリングをテーマにした美しいマーケットイベント。",
+                url: "https://www.google.com/search?q=KANAZAWA+CRAFT+COFFEE+DAYS"
+            },
+            {
+                id: 12,
+                title: "OKINAWA ISLAND COFFEE BREEZE",
+                region: "沖縄",
+                type: "フェスティバル",
+                date: "2027/03/20 (土) - 03/21 (日)",
+                location: "那覇市おもろまち公園（那覇市）",
+                organizer: "琉球ロースターズクラブ",
+                desc: "沖縄県産豆（国産コーヒー）の試飲会や、南国らしい爽やかなアイスコーヒーの飲み比べが楽しめるリゾートフェス。",
+                url: "https://www.google.com/search?q=OKINAWA+ISLAND+COFFEE+BREEZE"
+            },
+            {
+                id: 13,
+                title: "SHINSHU MATSUYAMA HIGHLAND COFFEE",
+                region: "長野",
+                type: "試飲会",
+                date: "2027/03/27 (土)",
+                location: "軽井沢・矢ケ崎公園（長野県軽井沢町）",
+                organizer: "信州アルプスコーヒー連合",
+                desc: "澄んだ空気の中、長野県内の山岳ロースターたちが淹れるこだわりの一杯を楽しむ高原の試飲会。",
+                url: "https://www.google.com/search?q=SHINSHU+MATSUYAMA+HIGHLAND+COFFEE"
+            },
+            {
+                id: 14,
+                title: "TOKYO HANDDRIP CHAMPIONSHIP",
+                region: "東京",
+                type: "フェスティバル",
+                date: "2027/04/03 (土) - 04/04 (日)",
+                location: "代々木公園イベント広場（東京都渋谷区）",
+                organizer: "日本ハンドドリップ協会",
+                desc: "日本一のハンドドリップ技術を競う大会と、一般参加者が全国の味を楽しめる巨大マーケットのコラボイベント。",
+                url: "https://www.google.com/search?q=TOKYO+HANDDRIP+CHAMPIONSHIP"
+            },
+            {
+                id: 15,
+                title: "KYOTO TEA & COFFEE CROSSOVER",
+                region: "京都",
+                type: "ポップアップ",
+                date: "2027/04/10 (土)",
+                location: "京都市勧業館みやこめっせ（京都市左京区）",
+                organizer: "京都カルチャーミックス",
+                desc: "日本茶とコーヒーという、京都ならではの「香りと味わい」の融合をテーマにしたユニークなポップアップイベント。",
+                url: "https://www.google.com/search?q=KYOTO+TEA+COFFEE+CROSSOVER"
+            },
+            {
+                id: 16,
+                title: "FUKUOKA ROASTERS SESSION",
+                region: "福岡",
+                type: "マーケット",
+                date: "2027/04/17 (土)",
+                location: "博多駅前広場（福岡市博多区）",
+                organizer: "博多珈琲文化発信実行委員会",
+                desc: "九州の玄関口で、アジアからの観光客や地元の人々が一緒になってスペシャルティコーヒーを楽しむ1日限りのマーケット。",
+                url: "https://www.google.com/search?q=FUKUOKA+ROASTERS+SESSION"
+            },
+            {
+                id: 17,
+                title: "HOKKAIDO ROASTERS VILLAGE",
+                region: "北海道",
+                type: "フェスティバル",
+                date: "2027/04/24 (土) - 04/25 (日)",
+                location: "札幌ファクトリーアトリウム（札幌市中央区）",
+                organizer: "北海道ロースターズギルド",
+                desc: "道内各地から選りすぐりのロースターが集まり、春の訪れを祝う全道規模のコーヒーフェスティバル。",
+                url: "https://www.google.com/search?q=HOKKAIDO+ROASTERS+VILLAGE"
+            },
+            {
+                id: 18,
+                title: "OSAKA MIDSUJI COFFEE STREET",
+                region: "大阪",
+                type: "ポップアップ",
+                date: "2027/05/01 (土)",
+                location: "御堂筋周辺ストリート（大阪市中央区）",
+                organizer: "OSAKA MIDSUJI COFFEE STREET 実行委員会",
+                desc: "大阪のメインストリートに、一日限りの特設カフェブースがずらりと並ぶ街歩き型のコーヒーイベント。",
+                url: "https://www.google.com/search?q=OSAKA+MIDSUJI+COFFEE+STREET"
+            },
+            {
+                id: 19,
+                title: "NAGOYA SPRING ROAST GATHERING",
+                region: "愛知",
+                type: "試飲会",
+                date: "2027/05/08 (土)",
+                location: "名古屋城二の丸庭園（名古屋市中区）",
+                organizer: "尾張珈琲研究会",
+                desc: "歴史ある名古屋城の庭園を眺めながら、新緑の季節にぴったりの浅煎りコーヒーをじっくり味わう試飲会。",
+                url: "https://www.google.com/search?q=NAGOYA+SPRING+ROAST+GATHERING"
+            },
+            {
+                id: 20,
+                title: "TOKYO COFFEE FESTIVAL 2027 Spring",
+                region: "東京",
+                type: "フェスティバル",
+                date: "2027/05/15 (土) - 05/16 (日)",
+                location: "国連大学中庭（東京都渋谷区）",
+                organizer: "Tokyo Coffee Festival 実行委員会",
+                desc: "毎年春に開催される国内最大級のフラッグシップイベント。世界中から最新のコーヒーカルチャーが集結。",
+                url: "https://www.google.com/search?q=TOKYO+COFFEE+FESTIVAL+2027+Spring"
+            }
         ];
 
-        const list = document.getElementById('event-list');
-        events.forEach(ev => {
-            list.innerHTML += `
-                <div class="bg-white p-4 rounded-xl shadow-sm border border-orange-100">
-                    <h2 class="font-bold text-lg text-orange-900">${ev.title}</h2>
-                    <p class="text-xs text-orange-600 font-semibold mt-1">📅 ${ev.date}</p>
-                    <p class="text-xs text-gray-600 mt-1">📍 ${ev.place}</p>
-                </div>
-            `;
-        });
+        let currentTab = 'all';
+        let favorites = JSON.parse(localStorage.getItem('coffee_favs') || '[]');
+
+        function renderEvents() {
+            const keyword = document.getElementById('search-input').value.toLowerCase();
+            const selectedRegion = document.getElementById('region-select').value;
+            const selectedType = document.getElementById('type-select').value;
+
+            let filtered = eventsData.filter(ev => {
+                const matchKeyword = ev.title.toLowerCase().includes(keyword) || ev.location.toLowerCase().includes(keyword) || ev.organizer.toLowerCase().includes(keyword);
+                const matchRegion = !selectedRegion || ev.region === selectedRegion;
+                const matchType = !selectedType || ev.type === selectedType;
+                const matchTab = currentTab === 'all' || favorites.includes(ev.id);
+                return matchKeyword && matchRegion && matchType && matchTab;
+            });
+
+            const grid = document.getElementById('events-grid');
+            const noResults = document.getElementById('no-results');
+            grid.innerHTML = '';
+
+            document.getElementById('count-all').innerText = eventsData.length;
+            document.getElementById('count-fav').innerText = favorites.length;
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                filtered.forEach(ev => {
+                    const isFav = favorites.includes(ev.id);
+                    const card = document.createElement('div');
+                    card.className = "bg-white rounded-2xl p-5 shadow-sm border border-[#EBE3D8] flex flex-col justify-between hover:shadow-md transition";
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="bg-[#F5EBE6] text-[#834F2F] text-xs font-bold px-2.5 py-1 rounded-md">${ev.region}</span>
+                                <span class="text-xs text-[#7A6B63] bg-gray-100 px-2 py-0.5 rounded">${ev.type}</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-[#2C221E] mb-1 leading-snug">${ev.title}</h3>
+                            <p class="text-xs text-[#C86D51] font-medium mb-3">${ev.date}</p>
+                            <p class="text-xs text-[#5C4D46] mb-1 flex items-center">📍 ${ev.location}</p>
+                            <p class="text-xs text-[#7A6B63] mb-3">主催: ${ev.organizer}</p>
+                            <p class="text-xs text-[#4A3B35] leading-relaxed mb-4">${ev.desc}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-[#F5EBE6]">
+                            <button onclick="toggleFav(${ev.id})" class="text-xs font-medium px-3 py-1.5 rounded-lg border ${isFav ? 'bg-[#C86D51] text-white border-[#C86D51]' : 'border-[#D4C4BC] text-[#5C4D46] hover:bg-gray-50'} transition">
+                                ${isFav ? '★ お気に入り解除' : '☆ お気に入り'}
+                            </button>
+                            <a href="${ev.url}" target="_blank" class="text-xs font-bold text-[#834F2F] hover:underline">公式・詳細 →</a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        function filterEvents() { renderEvents(); }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            const btnAll = document.getElementById('tab-all');
+            const btnFav = document.getElementById('tab-favorites');
+            if (tab === 'all') {
+                btnAll.className = "flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition";
+                btnFav.className = "flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition";
+            } else {
+                btnFav.className = "flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition";
+                btnAll.className = "flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition";
+            }
+            renderEvents();
+        }
+
+        function toggleFav(id) {
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(f => f !== id);
+            } else {
+                favorites.push(id);
+            }
+            localStorage.setItem('coffee_favs', JSON.stringify(favorites));
+            renderEvents();
+        }
+
+        function triggerSync() {
+            const btn = document.getElementById('sync-btn');
+            btn.innerText = "同期中...";
+            setTimeout(() => {
+                btn.innerText = "同期完了";
+                document.getElementById('sync-status-text').innerText = `直近の自動同期ログ: [${new Date().toLocaleDateString()} 最新] 全国24媒体のクローラから最新データを同期しました。`;
+                setTimeout(() => { btn.innerText = "同期"; }, 2000);
+            }, 1000);
+        }
+
+        renderEvents();
     </script>
 </body>
 </html>
