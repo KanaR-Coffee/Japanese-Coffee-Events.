@@ -8,7 +8,7 @@
         "location": "国連大学中庭（東京都渋谷区）",
         "organizer": "Tokyo Coffee Festival 実行委員会",
         "desc": "全国から約50店舗のロースターが集結する冬の大型コーヒーイベント。温かいコーヒーと冬支度のグッズマーケットが充実。",
-        "url": "https://example.com/tokyo-coffee-2026-winter"
+        "url": "https://www.google.com/search?q=TOKYO+COFFEE+FESTIVAL+2026"
     },
     {
         "id": 2,
@@ -19,7 +19,7 @@
         "location": "岡崎公園（京都市左京区）",
         "organizer": "京都自家焙煎珈琲組合",
         "desc": "京都を中心に、関西圏の人気ロースターが一堂に会する紅葉シーズンのマーケット。秋のブレンド飲み比べが楽しめます。",
-        "url": "https://example.com/kyoto-roasters-autumn"
+        "url": "https://www.google.com/search?q=KYOTO+ROASTERS+MARKET"
     },
     {
         "id": 3,
@@ -30,7 +30,7 @@
         "location": "天神中央公園（福岡市中央区）",
         "organizer": "Fukuoka Specialty Coffee Association",
         "desc": "九州各県の気鋭ロースターによる週末限定ポップアップストア。バリスタ同士のセッションやカッピングセミナーも開催。",
-        "url": "https://example.com/fukuoka-coffee-dec"
+        "url": "https://www.google.com/search?q=FUKUOKA+SPECIALTY+COFFEE+WEEKEND"
     },
     {
         "id": 4,
@@ -41,7 +41,7 @@
         "location": "札幌市円山公園周辺（北海道札幌市）",
         "organizer": "北海道コーヒーラバーズ",
         "desc": "雪景色の中に佇むロースターの味を巡るローカル試飲会。北の大地の深煎りコーヒーとスイーツのペアリング。",
-        "url": "https://example.com/sapporo-snow"
+        "url": "https://www.google.com/search?q=SAPPORO+SNOW+COFFEE+GATHERING"
     },
     {
         "id": 5,
@@ -52,7 +52,7 @@
         "location": "中之島公園（大阪市北区）",
         "organizer": "関西ロースターズギルド",
         "desc": "新年の幕開けを祝うクラフトコーヒーの祭典。国内外からゲストロースターを招いた特別な抽出実演も実施。",
-        "url": "https://example.com/osaka-coffee-2027"
+        "url": "https://www.google.com/search?q=OSAKA+ARTISAN+COFFEE+SUMMIT"
     },
     {
         "id": 6,
@@ -63,7 +63,7 @@
         "location": "久屋大通公園（名古屋市中区）",
         "organizer": "東海自家焙煎推進委員会",
         "desc": "喫茶店文化が根付く名古屋で開催される、現代のスペシャルティコーヒーに特化した一大フェスティバル。",
-        "url": "https://example.com/nagoya-coffee"
+        "url": "https://www.google.com/search?q=NAGOYA+COFFEE+LOVERS+JAM"
     },
     {
         "id": 7,
@@ -74,7 +74,7 @@
         "location": "神戸ハーバーランド（神戸市中央区）",
         "organizer": "神戸港珈琲散歩実行委員会",
         "desc": "港町の景色を眺めながら、神戸・阪神間の人気カフェのコーヒーとベイクを味わうピクニック形式のイベント。",
-        "url": "https://example.com/kobe-coffee"
+        "url": "https://www.google.com/search?q=KOBE+HARBOR+COFFEE+PICNIC"
     },
     {
         "id": 8,
@@ -85,7 +85,7 @@
         "location": "横浜赤レンガ倉庫（横浜市中区）",
         "organizer": "ヨコハマ・コーヒー・アソシエーション",
         "desc": "夕暮れから夜にかけて、横浜の歴史ある赤レンガ倉庫で開催される大人のためのナイトカッピング＆試飲イベント。",
-        "url": "https://example.com/yokohama-coffee"
+        "url": "https://www.google.com/search?q=YOKOHAMA+BEANS+BREW+NIGHT"
     },
     {
         "id": 9,
@@ -96,7 +96,7 @@
         "location": "勾当台公園（仙台市青葉区）",
         "organizer": "東北ロースターズネットワーク",
         "desc": "東北六県から選りすぐりのロースターが集結。東北の寒い冬に心まで温まる深煎りコーヒーの魅力を届けます。",
-        "url": "https://example.com/sendai-coffee"
+        "url": "https://www.google.com/search?q=SENDAI+AROMA+COFFEE+CARAVAN"
     },
     {
         "id": 10,
@@ -107,7 +107,7 @@
         "location": "旧広島市民球場跡地（広島市中区）",
         "organizer": "瀬戸内コーヒー同好会",
         "desc": "瀬戸内の温暖な気候のもと、中国・四国地方の気鋭ロースターとコーヒーラバーが集う春の祭典。",
-        "url": "https://example.com/hiroshima-coffee"
+        "url": "https://www.google.com/search?q=HIROSHIMA+GREEN+CREW+COFFEE+FES"
     },
     {
         "id": 11,
@@ -118,7 +118,7 @@
         "location": "金沢城公園（金沢市）",
         "organizer": "北陸珈琲文化振興会",
         "desc": "伝統工芸の街・金沢で、器とコーヒーのペアリングをテーマにした美しいマーケットイベント。",
-        "url": "https://example.com/kanazawa-coffee"
+        "url": "https://www.google.com/search?q=KANAZAWA+CRAFT+COFFEE+DAYS"
     },
     {
         "id": 12,
@@ -129,7 +129,7 @@
         "location": "那覇市おもろまち公園（那覇市）",
         "organizer": "琉球ロースターズクラブ",
         "desc": "沖縄県産豆（国産コーヒー）の試飲会や、南国らしい爽やかなアイスコーヒーの飲み比べが楽しめるリゾートフェス。",
-        "url": "https://example.com/okinawa-coffee"
+        "url": "https://www.google.com/search?q=OKINAWA+ISLAND+COFFEE+BREEZE"
     },
     {
         "id": 13,
@@ -140,7 +140,7 @@
         "location": "軽井沢・矢ケ崎公園（長野県軽井沢町）",
         "organizer": "信州アルプスコーヒー連合",
         "desc": "澄んだ空気の中、長野県内の山岳ロースターたちが淹れるこだわりの一杯を楽しむ高原の試飲会。",
-        "url": "https://example.com/shinshu-coffee"
+        "url": "https://www.google.com/search?q=SHINSHU+MATSUYAMA+HIGHLAND+COFFEE"
     },
     {
         "id": 14,
@@ -151,7 +151,7 @@
         "location": "代々木公園イベント広場（東京都渋谷区）",
         "organizer": "日本ハンドドリップ協会",
         "desc": "日本一のハンドドリップ技術を競う大会と、一般参加者が全国の味を楽しめる巨大マーケットのコラボイベント。",
-        "url": "https://example.com/tokyo-drip-2027"
+        "url": "https://www.google.com/search?q=TOKYO+HANDDRIP+CHAMPIONSHIP"
     },
     {
         "id": 15,
@@ -162,7 +162,7 @@
         "location": "京都市勧業館みやこめっせ（京都市左京区）",
         "organizer": "京都カルチャーミックス",
         "desc": "日本茶とコーヒーという、京都ならではの「香りと味わい」の融合をテーマにしたユニークなポップアップイベント。",
-        "url": "https://example.com/kyoto-crossover"
+        "url": "https://www.google.com/search?q=KYOTO+TEA+COFFEE+CROSSOVER"
     },
     {
         "id": 16,
@@ -173,7 +173,7 @@
         "location": "博多駅前広場（福岡市博多区）",
         "organizer": "博多珈琲文化発信実行委員会",
         "desc": "九州の玄関口で、アジアからの観光客や地元の人々が一緒になってスペシャルティコーヒーを楽しむ1日限りのマーケット。",
-        "url": "https://example.com/fukuoka-session"
+        "url": "https://www.google.com/search?q=FUKUOKA+ROASTERS+SESSION"
     },
     {
         "id": 17,
@@ -184,18 +184,18 @@
         "location": "札幌ファクトリーアトリウム（札幌市中央区）",
         "organizer": "北海道ロースターズギルド",
         "desc": "道内各地から選りすぐりのロースターが集まり、春の訪れを祝う全道規模のコーヒーフェスティバル。",
-        "url": "https://example.com/hokkaido-village"
+        "url": "https://www.google.com/search?q=HOKKAIDO+ROASTERS+VILLAGE"
     },
     {
         "id": 18,
-        "title": "OSAKA MIDSUJI COFFEE STREET",
+        =    "OSAKA MIDSUJI COFFEE STREET",
         "region": "大阪",
         "type": "ポップアップ",
         "date": "2027/05/01 (土)",
         "location": "御堂筋周辺ストリート（大阪市中央区）",
-        "organizer": "大阪ストリートカフェ協会",
+        "organizer": "OSAKA MIDSUJI COFFEE STREET 実行委員会",
         "desc": "大阪のメインストリートに、一日限りの特設カフェブースがずらりと並ぶ街歩き型のコーヒーイベント。",
-        "url": "https://example.com/osaka-midsuji"
+        "url": "https://www.google.com/search?q=OSAKA+MIDSUJI+COFFEE+STREET"
     },
     {
         "id": 19,
@@ -206,7 +206,7 @@
         "location": "名古屋城二の丸庭園（名古屋市中区）",
         "organizer": "尾張珈琲研究会",
         "desc": "歴史ある名古屋城の庭園を眺めながら、新緑の季節にぴったりの浅煎りコーヒーをじっくり味わう試飲会。",
-        "url": "https://example.com/nagoya-spring"
+        "url": "https://www.google.com/search?q=NAGOYA+SPRING+ROAST+GATHERING"
     },
     {
         "id": 20,
@@ -217,6 +217,6 @@
         "location": "国連大学中庭（東京都渋谷区）",
         "organizer": "Tokyo Coffee Festival 実行委員会",
         "desc": "毎年春に開催される国内最大級のフラッグシップイベント。世界中から最新のコーヒーカルチャーが集結。",
-        "url": "https://example.com/tokyo-coffee-2027-spring"
+        "url": "https://www.google.com/search?q=TOKYO+COFFEE+FESTIVAL+2027+Spring"
     }
 ]
