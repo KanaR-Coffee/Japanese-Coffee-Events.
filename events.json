@@ -1,0 +1,57 @@
+[
+    {
+        "id": 1,
+        "title": "TOKYO COFFEE FESTIVAL 2026 Winter",
+        "region": "東京",
+        "type": "フェスティバル",
+        "date": "2026/12/12 (土) - 12/13 (日)",
+        "location": "国連大学中庭（東京都渋谷区）",
+        "organizer": "Tokyo Coffee Festival 実行委員会",
+        "desc": "全国から約50店舗のロースターが集結する冬の大型コーヒーイベント。温かいコーヒーと冬支度のグッズマーケットが充実。",
+        "url": "https://example.com/tokyo-coffee-2026-winter"
+    },
+    {
+        "id": 2,
+        "title": "KYOTO ROASTERS MARKET 秋の特別編",
+        "region": "京都",
+        "type": "マーケット",
+        "date": "2026/11/28 (土) - 11/29 (日)",
+        "location": "岡崎公園（京都市左京区）",
+        "organizer": "京都自家焙煎珈琲組合",
+        "desc": "京都を中心に、関西圏の人気ロースターが一堂に会する紅葉シーズンのマーケット。秋のブレンド飲み比べが楽しめます。",
+        "url": "https://example.com/kyoto-roasters-autumn"
+    },
+    {
+        "id": 3,
+        "title": "FUKUOKA SPECIALTY COFFEE WEEKEND",
+        "region": "福岡",
+        "type": "ポップアップ",
+        "date": "2026/12/05 (土) - 12/06 (日)",
+        "location": "天神中央公園（福岡市中央区）",
+        "organizer": "Fukuoka Specialty Coffee Association",
+        "desc": "九州各県の気鋭ロースターによる週末限定ポップアップストア。バリスタ同士のセッションやカッピングセミナーも開催。",
+        "url": "https://example.com/fukuoka-coffee-dec"
+    },
+    {
+        "id": 4,
+        "title": "SAPPORO SNOW & COFFEE GATHERING",
+        "region": "北海道",
+        "type": "試飲会",
+        "date": "2026/12/19 (土)",
+        "location": "札幌市円山公園周辺（北海道札幌市）",
+        "organizer": "北海道コーヒーラバーズ",
+        "desc": "雪景色の中に佇むロースターの味を巡るローカル試飲会。北の大地の深煎りコーヒーとスイーツのペアリング。",
+        "url": "https://example.com/sapporo-snow"
+    },
+    {
+        "id": 5,
+        "title": "OSAKA ARTISAN COFFEE SUMMIT 2027 New Year",
+        "region": "大阪",
+        "type": "フェスティバル",
+        "date": "2027/01/16 (土) - 01/17 (日)",
+        "location": "中之島公園（大阪市北区）",
+        "organizer": "関西ロースターズギルド",
+        "desc": "新年の幕開けを祝うクラフトコーヒーの祭典。国内外からゲストロースターを招いた特別な抽出実演も実施。",
+        "url": "https://example.com/osaka-coffee-2027"
+    }
+]
