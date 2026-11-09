@@ -44,4 +44,131 @@
             
             <div class="bg-[#2C221E] p-3 rounded-2xl shadow-lg mt-6 space-y-3">
                 <div class="relative">
-                    <input type="text" id="search-input" placeholder="
+                    <input type="text" id="search-input" placeholder="イベント名、会場、主催者で検索..." oninput="filterEvents()"
+                        class="w-full bg-[#3D312C] text-white placeholder-[#9C8A82] text-sm px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C86D51]">
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <select id="region-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
+                        <option value="">すべての地域</option>
+                        <option value="東京">東京都</option>
+                        <option value="京都">京都府</option>
+                        <option value="大阪">大阪府</option>
+                        <option value="福岡">福岡県</option>
+                        <option value="北海道">北海道</option>
+                    </select>
+                    <select id="type-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
+                        <option value="">すべての種別</option>
+                        <option value="フェスティバル">フェスティバル</option>
+                        <option value="マーケット">マーケット</option>
+                        <option value="ポップアップ">ポップアップ</option>
+                        <option value="試飲会">試飲会</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-6xl mx-auto px-4 mt-6 w-full flex space-x-2">
+        <button onclick="switchTab('all')" id="tab-all" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition">すべてのイベント (<span id="count-all">0</span>)</button>
+        <button onclick="switchTab('favorites')" id="tab-favorites" class="flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition">お気に入り (<span id="count-fav">0</span>)</button>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-6 flex-1 w-full">
+        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+        <div id="no-results" class="hidden text-center py-12 text-gray-500">
+            条件に一致する珈琲イベントが見つかりませんでした。
+        </div>
+    </main>
+
+    <footer class="bg-[#2C221E] text-[#9C8A82] text-xs py-6 text-center mt-auto">
+        <p>&copy; 2026 BrewSync Japan. Powered by GitHub Actions & Vercel.</p>
+    </footer>
+
+    <script>
+        let eventsData = [];
+        let currentTab = 'all';
+        let favorites = JSON.parse(localStorage.getItem('coffee_favs') || '[]');
+
+        async function loadEvents() {
+            try {
+                const response = await fetch('events.json?v=' + new Date().getTime());
+                eventsData = await response.json();
+                renderEvents();
+            } catch (error) {
+                console.error('データの読み込みに失敗しました', error);
+            }
+        }
+
+        function renderEvents() {
+            const keyword = document.getElementById('search-input').value.toLowerCase();
+            const selectedRegion = document.getElementById('region-select').value;
+            const selectedType = document.getElementById('type-select').value;
+
+            let filtered = eventsData.filter(ev => {
+                const matchKeyword = ev.title.toLowerCase().includes(keyword) || ev.location.toLowerCase().includes(keyword) || ev.organizer.toLowerCase().includes(keyword);
+                const matchRegion = !selectedRegion || ev.region === selectedRegion;
+                const matchType = !selectedType || ev.type === selectedType;
+                const matchTab = currentTab === 'all' || favorites.includes(ev.id);
+                return matchKeyword && matchRegion && matchType && matchTab;
+            });
+
+            const grid = document.getElementById('events-grid');
+            const noResults = document.getElementById('no-results');
+            grid.innerHTML = '';
+
+            document.getElementById('count-all').innerText = eventsData.length;
+            document.getElementById('count-fav').innerText = favorites.length;
+
+            if (filtered.length === 0) {
+                noResults.classList.remove('hidden');
+            } else {
+                noResults.classList.add('hidden');
+                filtered.forEach(ev => {
+                    const isFav = favorites.includes(ev.id);
+                    const card = document.createElement('div');
+                    card.className = "bg-white rounded-2xl p-5 shadow-sm border border-[#EBE3D8] flex flex-col justify-between hover:shadow-md transition";
+                    card.innerHTML = `
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="bg-[#F5EBE6] text-[#834F2F] text-xs font-bold px-2.5 py-1 rounded-md">${ev.region}</span>
+                                <span class="text-xs text-[#7A6B63] bg-gray-100 px-2 py-0.5 rounded">${ev.type}</span>
+                            </div>
+                            <h3 class="font-bold text-lg text-[#2C221E] mb-1 leading-snug">${ev.title}</h3>
+                            <p class="text-xs text-[#C86D51] font-medium mb-3">${ev.date}</p>
+                            <p class="text-xs text-[#5C4D46] mb-1 flex items-center">📍 ${ev.location}</p>
+                            <p class="text-xs text-[#7A6B63] mb-3">主催: ${ev.organizer}</p>
+                            <p class="text-xs text-[#4A3B35] leading-relaxed mb-4">${ev.desc}</p>
+                        </div>
+                        <div class="flex items-center justify-between pt-3 border-t border-[#F5EBE6]">
+                            <button onclick="toggleFav(${ev.id})" class="text-xs font-medium px-3 py-1.5 rounded-lg border ${isFav ? 'bg-[#C86D51] text-white border-[#C86D51]' : 'border-[#D4C4BC] text-[#5C4D46] hover:bg-gray-50'} transition">
+                                ${isFav ? '★ お気に入り解除' : '☆ お気に入り'}
+                            </button>
+                            <a href="${ev.url}" target="_blank" class="text-xs font-bold text-[#834F2F] hover:underline">公式・詳細 →</a>
+                        </div>
+                    `;
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        function filterEvents() { renderEvents(); }
+
+        function switchTab(tab) {
+            currentTab = tab;
+            const btnAll = document.getElementById('tab-all');
+            const btnFav = document.getElementById('tab-favorites');
+            if (tab === 'all') {
+                btnAll.className = "flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition";
+                btnFav.className = "flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition";
+            } else {
+                btnFav.className = "flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition";
+                btnAll.className = "flex-1 py-2.5 rounded-xl text-sm font-medium bg-[#E8D5CC] text-[#4A3B35] hover:bg-[#dfc9be] transition";
+            }
+            renderEvents();
+        }
+
+        function toggleFav(id) {
+            if (favorites.includes(id)) {
+                favorites = favorites.filter(f => f !== id);
+            } else {
+                favorites.push(id
