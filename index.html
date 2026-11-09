@@ -3,326 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BrewSync Japan | 日本全国珈琲イベント・自動同期プラットフォーム</title>
+    <title>BrewSync Japan | 日本全国珈琲イベント一覧</title>
     <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        coffee: {
-                            50: '#FDFBF7',
-                            100: '#F5EBE6',
-                            200: '#E8D5CC',
-                            600: '#A36B49',
-                            700: '#834F2F',
-                            800: '#5C3317',
-                            900: '#2C1810',
-                        },
-                        amber: {
-                            500: '#D97706',
-                            600: '#B45309',
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'Noto Sans JP', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <style>
-        body { font-family: 'Noto Sans JP', 'Inter', sans-serif; background-color: #FAF7F2; color: #2C1810; }
-        .fade-in { animation: fadeIn 0.3s ease-in-out forwards; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(6px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap";
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #FDFBF7; color: #2C221E; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-coffee-200 selection:text-coffee-900">
-
-    <!-- ヘルパー通知メッセージボックス (alertの代わりに利用) -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-coffee-900 text-coffee-50 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-coffee-700/50">
-        <i data-lucide="check-circle" class="w-5 h-5 text-emerald-400"></i>
-        <span id="toast-message" class="text-sm font-medium">通知メッセージ</span>
-    </div>
+<body class="min-h-screen flex flex-col bg-[#FDFBF7] text-[#2C221E]">
 
     <!-- ヘッダー -->
-    <header class="bg-coffee-900 text-coffee-50 sticky top-0 z-40 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3 cursor-pointer" onclick="resetFilters()">
-                <div class="w-10 h-10 rounded-xl bg-amber-600 flex items-center justify-center shadow-inner text-coffee-50">
-                    <i data-lucide="coffee" class="w-6 h-6"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight flex items-center gap-2">
-                        BrewSync Japan
-                        <span class="text-xs px-2 py-0.5 rounded-full bg-amber-600/30 text-amber-400 border border-amber-600/40 font-normal">ライブ同期</span>
-                    </h1>
-                    <p class="text-xs text-coffee-200/70 hidden sm:block">日本全国の珈琲イベント自動巡回プラットフォーム</p>
-                </div>
+    <header class="bg-[#2C221E] text-[#FDFBF7] sticky top-0 z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded bg-[#C86D51] flex items-center justify-center font-bold text-white">B</div>
+                <span class="font-bold text-lg tracking-wide">BrewSync Japan</span>
             </div>
-
-            <!-- 自動更新ステータス＆手動同期ボタン -->
-            <div class="flex items-center gap-3">
-                <div class="hidden md:flex flex-col items-end text-right bg-coffee-800/80 px-3 py-1.5 rounded-lg border border-coffee-700/60 text-xs">
-                    <div class="flex items-center gap-1.5 text-emerald-400 font-medium">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        <span>自動巡回・毎日04:00同期中</span>
-                    </div>
-                    <span id="countdown-timer" class="text-coffee-200/70">次回同期まであと 11時間 42分</span>
-                </div>
-
-                <button onclick="triggerManualSync()" id="sync-btn" class="flex items-center gap-2 bg-amber-600 hover:bg-amber-700 active:scale-95 text-white px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm cursor-pointer">
-                    <i data-lucide="refresh-cw" class="w-4 h-4" id="sync-icon"></i>
-                    <span class="hidden sm:inline">今すぐ同期・確認</span>
-                    <span class="sm:hidden">同期</span>
-                </button>
-
-                <button onclick="openModal('apply-modal')" class="flex items-center gap-1.5 bg-coffee-800 hover:bg-coffee-700 text-coffee-100 px-3 py-2 rounded-xl text-sm font-medium transition border border-coffee-700 cursor-pointer">
-                    <i data-lucide="plus-circle" class="w-4 h-4 text-amber-500"></i>
-                    <span class="hidden sm:inline">イベント掲載申請</span>
+            <div class="flex items-center space-x-3 text-sm">
+                <span class="hidden md:inline bg-[#3D312C] px-3 py-1 rounded-full text-xs text-[#E8D5CC]">ライブ同期中</span>
+                <button onclick="triggerSync()" id="sync-btn" class="bg-[#C86D51] hover:bg-[#b05a40] text-white px-4 py-1.5 rounded-lg text-xs font-medium transition flex items-center space-x-1 cursor-pointer">
+                    <span>同期</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- 自動更新ログ＆システムステータスバナー -->
-    <section class="bg-coffee-100 border-b border-coffee-200 px-4 py-3 text-xs text-coffee-800">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div class="flex items-center gap-2">
-                <i data-lucide="shield-check" class="w-4 h-4 text-amber-600 shrink-0"></i>
-                <span id="latest-log-text" class="font-medium">直近の自動同期ログ: [2026/11/09 04:00] 全国24媒体のクローラーから新規イベント2件を自動統合しました。</span>
-            </div>
-            <button onclick="toggleLogModal()" class="text-amber-700 hover:underline font-semibold flex items-center gap-1 shrink-0">
-                <i data-lucide="history" class="w-3.5 h-3.5"></i> 過去の同期履歴を見る
-            </button>
-        </div>
-    </section>
-
-    <!-- メインビジュアル / ヒーローセクション -->
-    <section class="bg-gradient-to-b from-coffee-900 to-coffee-800 text-coffee-50 py-12 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#D97706_1px,transparent_1px)] [background-size:16px_16px]"></div>
-        <div class="max-w-3xl mx-auto relative z-10">
-            <span class="inline-block px-3 py-1 rounded-full bg-amber-600/20 text-amber-400 text-xs font-semibold mb-4 border border-amber-500/30">
-                全国のロースター＆カフェ情報が集結
-            </span>
-            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">
-                日本中の極上な珈琲体験と出会う
-            </h2>
-            <p class="text-coffee-200 text-sm sm:text-base mb-8 leading-relaxed">
-                全国各地で開催されるコーヒーフェスティバル、マーケット、試飲会情報を毎日自動で巡回・集約。お気に入りの一杯を見つけに行こう。
-            </p>
-
-            <!-- 検索コントロールバー -->
-            <div class="bg-coffee-950/70 p-3 sm:p-4 rounded-2xl shadow-xl border border-coffee-700/50 backdrop-blur-md max-w-2xl mx-auto flex flex-col sm:flex-row gap-3">
-                <div class="relative flex-1">
-                    <i data-lucide="search" class="absolute left-3.5 top-3.5 w-4 h-4 text-coffee-400"></i>
-                    <input type="text" id="search-input" oninput="filterEvents()" placeholder="イベント名、会場、主催者で検索..." class="w-full bg-coffee-900 text-coffee-50 pl-10 pr-4 py-3 rounded-xl text-sm border border-coffee-700 focus:outline-none focus:border-amber-500 placeholder-coffee-400">
-                </div>
-                <div class="flex gap-2">
-                    <select id="region-filter" onchange="filterEvents()" class="bg-coffee-900 text-coffee-50 px-4 py-3 rounded-xl text-sm border border-coffee-700 focus:outline-none focus:border-amber-500 cursor-pointer">
-                        <option value="all">すべての地域</option>
-                        <option value="北海道・東北">北海道・東北</option>
-                        <option value="関東">関東</option>
-                        <option value="中部">中部</option>
-                        <option value="関西">関西</option>
-                        <option value="中国・四国">中国・四国</option>
-                        <option value="九州・沖縄">九州・沖縄</option>
-                    </select>
-                    <select id="type-filter" onchange="filterEvents()" class="bg-coffee-900 text-coffee-50 px-4 py-3 rounded-xl text-sm border border-coffee-700 focus:outline-none focus:border-amber-500 cursor-pointer">
-                        <option value="all">すべての種別</option>
-                        <option value="フェスティバル">フェスティバル</option>
-                        <option value="展示会">展示会</option>
-                        <option value="マーケット">マーケット</option>
-                        <option value="セミナー">セミナー</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- メインコンテンツセクション -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-1 w-full">
-        <!-- タブ（すべて / お気に入り） -->
-        <div class="flex items-center justify-between mb-6 border-b border-coffee-200 pb-4">
-            <div class="flex items-center gap-2">
-                <button onclick="switchTab('all')" id="tab-all" class="px-4 py-2 rounded-xl text-sm font-bold transition bg-amber-600 text-white shadow-sm">
-                    すべてのイベント (<span id="count-all">0</span>)
-                </button>
-                <button onclick="switchTab('fav')" id="tab-fav" class="px-4 py-2 rounded-xl text-sm font-medium transition bg-coffee-100 hover:bg-coffee-200 text-coffee-800">
-                    <i data-lucide="heart" class="w-4 h-4 inline mr-1 text-rose-500"></i>お気に入り (<span id="count-fav">0</span>)
-                </button>
-            </div>
-            <div class="text-xs text-coffee-700 font-medium hidden sm:block">
-                表示中: <span id="visible-count" class="font-bold text-coffee-900">0</span>件のイベント
-            </div>
-        </div>
-
-        <!-- イベントカード一覧グリッド -->
-        <div id="events-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- 動的生成 -->
-        </div>
-
-        <!-- 該当なしメッセージ -->
-        <div id="no-results" class="hidden text-center py-16 bg-white rounded-2xl border border-coffee-200 shadow-sm mt-4">
-            <i data-lucide="coffee" class="w-12 h-12 text-coffee-300 mx-auto mb-3"></i>
-            <h3 class="text-lg font-bold text-coffee-800 mb-1">該当する珈琲イベントが見つかりませんでした</h3>
-            <p class="text-xs text-coffee-600 mb-4">検索条件を変更するか、新しいイベントの追加申請をお試しください。</p>
-            <button onclick="resetFilters()" class="px-4 py-2 bg-coffee-800 text-coffee-50 rounded-xl text-xs font-medium hover:bg-coffee-700 transition">条件をリセット</button>
-        </div>
-    </main>
-
-    <!-- フッター -->
-    <footer class="bg-coffee-900 text-coffee-300 py-12 border-t border-coffee-800 mt-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
-            <div class="flex items-center gap-3">
-                <div class="w-8 h-8 rounded-lg bg-amber-600 flex items-center justify-center text-white">
-                    <i data-lucide="coffee" class="w-5 h-5"></i>
-                </div>
-                <div>
-                    <span class="text-coffee-50 font-bold">BrewSync Japan</span>
-                    <p class="text-xs text-coffee-400 mt-0.5">Automated Coffee Event CRAWLER & Aggregator SPA</p>
-                </div>
-            </div>
-            <p class="text-xs text-coffee-400">
-                &copy; 2026 BrewSync Japan Project. All rights reserved. 毎日深夜4:00自動同期エンジン稼働中。
-            </p>
-        </div>
-    </footer>
-
-    <!-- イベント詳細モーダル -->
-    <div id="detail-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-coffee-200 fade-in">
-            <div class="relative h-48 sm:h-64 bg-coffee-900 overflow-hidden" id="modal-img-container">
-                <img id="modal-img" src="" alt="イベント画像" class="w-full h-full object-cover opacity-90">
-                <div class="absolute inset-0 bg-gradient-to-t from-coffee-950 via-transparent to-transparent"></div>
-                <button onclick="closeModal('detail-modal')" class="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition cursor-pointer">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
-                <div class="absolute bottom-4 left-6 right-6">
-                    <span id="modal-badge" class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-600 text-white mb-2 inline-block">フェスティバル</span>
-                    <h2 id="modal-title" class="text-xl sm:text-2xl font-bold text-white">イベントタイトル</h2>
-                </div>
-            </div>
-            <div class="p-6 sm:p-8 space-y-6">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 bg-coffee-50 p-4 rounded-xl border border-coffee-200 text-sm">
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="calendar" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                        <div>
-                            <span class="text-xs text-coffee-600 block">開催日時</span>
-                            <span id="modal-date" class="font-bold text-coffee-900">2026年11月21日(土)〜22日(日)</span>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="map-pin" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                        <div>
-                            <span class="text-xs text-coffee-600 block">会場</span>
-                            <span id="modal-venue" class="font-bold text-coffee-900">京都市勧業館みやこめっせ</span>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="user-check" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                        <div>
-                            <span class="text-xs text-coffee-600 block">主催・運営</span>
-                            <span id="modal-organizer" class="font-bold text-coffee-900">京都コーヒー協会</span>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3">
-                        <i data-lucide="tag" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i>
-                        <div>
-                            <span class="text-xs text-coffee-600 block">入場料 / チケット</span>
-                            <span id="modal-price" class="font-bold text-coffee-900">前売 1,800円 (コーヒー3杯付)</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-sm font-bold text-coffee-900 mb-2 flex items-center gap-2">
-                        <i data-lucide="info" class="w-4 h-4 text-amber-600"></i> イベントのみどころ・詳細
-                    </h3>
-                    <p id="modal-desc" class="text-sm text-coffee-700 leading-relaxed bg-white p-4 rounded-xl border border-coffee-100">
-                        イベントの詳細テキストがここに入ります。
-                    </p>
-                </div>
-
-                <div class="flex items-center justify-end gap-3 pt-4 border-t border-coffee-200">
-                    <button onclick="closeModal('detail-modal')" class="px-5 py-2.5 rounded-xl border border-coffee-300 text-coffee-700 hover:bg-coffee-100 text-sm font-medium transition cursor-pointer">
-                        閉じる
-                    </button>
-                    <a id="modal-link" href="#" target="_blank" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white text-sm font-semibold transition flex items-center gap-2 shadow-sm">
-                        <span>公式サイトへ移動</span>
-                        <i data-lucide="external-link" class="w-4 h-4"></i>
-                    </a>
-                </div>
-            </div>
+    <!-- 同期ログバナー -->
+    <div class="bg-[#E8D5CC] text-[#4A3B35] text-xs py-2 px-4 border-b border-[#d8c3b8]">
+        <div class="max-w-6xl mx-auto flex items-center justify-between">
+            <p id="sync-status-text">直近の自動同期ログ: [2026/11/09 04:00] 全国24媒体のクローラから新規イベント2件を自動統合しました。</p>
+            <button onclick="alert('過去7日間の同期履歴: すべて正常にクロールおよびデータ統合が完了しています。')" class="underline hover:text-black shrink-0 ml-2">履歴</button>
         </div>
     </div>
 
-    <!-- イベント掲載申請モーダル -->
-    <div id="apply-modal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-xl w-full p-6 sm:p-8 shadow-2xl border border-coffee-200 fade-in">
-            <div class="flex items-center justify-between mb-6">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-xl bg-amber-600/10 text-amber-600 flex items-center justify-center">
-                        <i data-lucide="plus-circle" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <h2 class="text-lg font-bold text-coffee-900">珈琲イベント掲載申請</h2>
-                        <p class="text-xs text-coffee-600">あなたのイベントを自動同期データベースに追加します</p>
-                    </div>
+    <!-- メインビジュアル -->
+    <section class="bg-[#3D312C] text-[#FDFBF7] py-12 px-4 text-center">
+        <div class="max-w-3xl mx-auto space-y-4">
+            <span class="inline-block bg-[#C86D51]/30 text-[#E8D5CC] text-xs px-3 py-1 rounded-full border border-[#C86D51]/50">全国のロースター＆カフェ情報が集結</span>
+            <h1 class="text-3xl md:text-4xl font-bold tracking-tight">日本中の極上な珈琲体験と出会う</h1>
+            <p class="text-sm md:text-base text-[#D4C4BC] leading-relaxed">
+                全国各地で開催されるコーヒーフェスティバル、マーケット、試飲会情報を毎日自動で巡回・集積。お気に入りの一杯を見つけに行こう。
+            </p>
+            
+            <!-- 検索・フィルターバー -->
+            <div class="bg-[#2C221E] p-3 rounded-2xl shadow-lg mt-6 space-y-3">
+                <div class="relative">
+                    <input type="text" id="search-input" placeholder="イベント名、会場、主催者で検索..." oninput="filterEvents()"
+                        class="w-full bg-[#3D312C] text-white placeholder-[#9C8A82] text-sm px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#C86D51]">
                 </div>
-                <button onclick="closeModal('apply-modal')" class="text-coffee-400 hover:text-coffee-800 p-1">
-                    <i data-lucide="x" class="w-5 h-5"></i>
-                </button>
+                <div class="grid grid-cols-2 gap-2">
+                    <select id="region-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
+                        <option value="">すべての地域</option>
+                        <option value="東京">東京都</option>
+                        <option value="京都">京都府</option>
+                        <option value="大阪">大阪府</option>
+                        <option value="福岡">福岡県</option>
+                        <option value="北海道">北海道</option>
+                    </select>
+                    <select id="type-select" onchange="filterEvents()" class="bg-[#3D312C] text-white text-sm px-3 py-2.5 rounded-xl focus:outline-none">
+                        <option value="">すべての種別</option>
+                        <option value="フェスティバル">フェスティバル</option>
+                        <option value="マーケット">マーケット</option>
+                        <option value="ポップアップ">ポップアップ</option>
+                        <option value="試飲会">試飲会</option>
+                    </select>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <form onsubmit="handleApplySubmit(event)" class="space-y-4 text-sm">
-                <div>
-                    <label class="block font-medium text-coffee-800 mb-1">イベント名 <span class="text-rose-500">*</span></label>
-                    <input type="text" id="apply-name" required placeholder="例: 湘南ロースターズ珈琲マルシェ" class="w-full px-4 py-2.5 rounded-xl border border-coffee-300 focus:outline-none focus:border-amber-600">
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block font-medium text-coffee-800 mb-1">地域 <span class="text-rose-500">*</span></label>
-                        <select id="apply-region" required class="w-full px-4 py-2.5 rounded-xl border border-coffee-300 focus:outline-none focus:border-amber-600">
-                            <option value="北海道・東北">北海道・東北</option>
-                            <option value="関東" selected>関東</option>
-                            <option value="中部">中部</option>
-                            <option value="関西">関西</option>
-                            <option value="中国・四国">中国・四国</option>
-                            <option value="九州・沖縄">九州・沖縄</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="block font-medium text-coffee-800 mb-1">イベント種別 <span class="text-rose-500">*</span></label>
-                        <select id="apply-type" required class="w-full px-4 py-2.5 rounded-xl border border-coffee-300 focus:outline-none focus:border-amber-600">
-                            <option value="フェスティバル" selected>フェスティバル</option>
-                            <option value="展示会">展示会</option>
-                            <option value="マーケット">マーケット</option>
-                            <option value="セミナー">セミナー</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block font-medium text-coffee-800 mb-1">開催日時 <span class="text-rose-500">*</span></label>
-                        <input type="text" id="apply-date" required placeholder="例: 2026年12月5日(土)" class="w-full px-4 py-2.5 rounded-xl border border-coffee-300 focus:outline-none focus:border-amber-600">
-                    </div>
-                    <div>
-                        <label class="block font-medium text-coffee-800 mb-1">会場名 <span class="text-rose-500">*</span></label>
-                        <input type="text" id="apply-venue" required placeholder="例: 鎌倉海浜公園" class="w-full px-4 py-2.5 rounded-xl border border-coffee-300 focus:outline-none focus:border-amber-600">
-                    </div>
-                </div>
-                <div>
-                    <label class="block font-medium text-coffee-800 mb-1">主催・公式サイトURL</label>
-                    <input type="url" id="apply-url" placeholder="https://example.com" class="w-full px-4 py-2.5 rounded-xl border border-coffee-300 focus:outline-none focus:border-amber-600">
-                </div>
-                <div>
-                    <label
+    <!-- タブ切り替え -->
+    <div class="max-w-6xl mx-auto px-4 mt-6 w-full flex space-x-2">
+        <button onclick="switchTab('all')" id="tab-all" class="flex-1 py-2.5 rounded-xl text-sm font-bold bg-[#C86D51] text-white shadow-sm transition">すべてのイベント (<span id="count-all">0</span>)</button>
+        <button onclick="switchTab('favorites')" id="tab-favorites
