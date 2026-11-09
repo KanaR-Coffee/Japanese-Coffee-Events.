@@ -4,7 +4,7 @@ on:
   schedule:
     # 毎日日本時間の朝4時に自動実行（UTC 19:00）
     - cron: '0 19 * * *'
-  workflow_dispatch: # 手動でも実行できるようにするボタン
+  workflow_dispatch: # 手動でもいつでも実行できるボタン
 
 jobs:
   update-events:
@@ -15,13 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Run update script
+      - name: Run sync check
         run: |
-          echo "Fetching latest coffee events across Japan..."
-          date > last_updated.txt
+          echo "Checking for latest coffee events..."
+          date -u +"%Y-%m-%d %H:%M:%S" > last_sync.log
 
       - name: Commit and push changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Auto-update coffee events data"
+          commit_message: "Auto-update coffee events sync log"
           branch: main
