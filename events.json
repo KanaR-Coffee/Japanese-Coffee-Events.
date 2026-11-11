@@ -1,42 +1,30 @@
 [
     {
         "id": 1,
-        "title": "【ネスカフェ無料体験イベント】4つの部屋で見つける自分らしいコーヒー時間｜六本木ヒルズ",
+        "title": "アジア最大級のスペシャルティコーヒーイベント「SCAJ2026」に10万人超 4日間で過去最多の来場者",
         "region": "全国",
         "type": "フェスティバル",
-        "date": "Mon, 09 Nov 2026",
+        "date": "Wed, 11 Nov 2026",
         "location": "全国各地",
         "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE1iQWluWXFHdlVEanpFblFFZEZQc3JW...",
-        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1iQWluWXFHdlVEanpFblFFZEZQc3JWQ3F6VmhSY2RXbE5RTVl2eUF6LXNldjUzQmFOQmZhSjVNUGtMVkZqU05hTTlYVzBmYjg?oc=5",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sRkthdFRDNzRxM1ZEYklqT24tNDFh...",
+        "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTE9sRkthdFRDNzRxM1ZEYklqT24tNDFhWGRHbnNsX1hDMkVfdTE0enItQkJhRWZCQnFVXzk3QjEtUDFFYmZiMGU0RkstaHBsQTdNZVd4U0RwRHpGbnIyYkY1N19n?oc=5",
         "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 2,
-        "title": "【六本木ヒルズ】巨大モニュメントが出現！本格ラテの無料試飲＆おしゃれ部屋を巡る「ネスカフェ」10日間限定イベントをレポ！",
+        "title": "参加無料＆ドリップコーヒーのお土産付き！初心者向けマネーセミナー×スペシャルトークイベント 12月13日（日）開催",
         "region": "全国",
-        "type": "試飲会",
-        "date": "Tue, 10 Nov 2026",
+        "type": "フェスティバル",
+        "date": "Wed, 11 Nov 2026",
         "location": "全国各地",
         "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTE1pX1hpZ245R29SSWRYNkN4YmVsZlBh...",
-        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE1pX1hpZ245R29SSWRYNkN4YmVsZlBhWmhmOEg0dUxodTBQeFp2SHNCQzdXWEFLdmwyQ0tQVlJsbFNyc3FWLXRxeEpzZGN6YWc?oc=5",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTE5oeGczN2VyUW5IM20tbzNFYmprWmM1...",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE5oeGczN2VyUW5IM20tbzNFYmprWmM1RjdSeWxkd1pEOS1aZWxyRWNIMW1FeC15TW1LSHJmVHlMNWVWWDJxSG1EY3ZnMkZCLU90dVJibVN6Ni1BZURQaFNqMGxpTC1SZ1BD?oc=5",
         "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 3,
-        "title": "小山コーヒーフェス2026が開催！北海道から沖縄まで全国の人気コーヒーショップが栃木に集結！（Kae） - エキスパート",
-        "region": "北海道",
-        "type": "フェスティバル",
-        "date": "Sat, 07 Nov 2026",
-        "location": "北海道 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSWZDR3ZUSUhSVGxQa0NhLXRnVk5W...",
-        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSWZDR3ZUSUhSVGxQa0NhLXRnVk5WX2REREFMUnFBY1IzMFhtWXJiLTFqSV9ja2JaS2pMWXBnY2RweEZmU2UxMFhGSVVRQVFINGhzc1FVd3o1U1p0YldiRGxmRW1JNWdITVpkei1zOGtaam5RVDNFbi1NTF9MN291UUNHTl9KQjk2?oc=5",
-        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 4,
         "title": "香川や岡山でイベント出店や間借り出店で営業する「This is Curry」のカレーイメージ＝サンポート高松で「カガワコーヒーマーケット」",
         "region": "岡山",
         "type": "マーケット",
@@ -45,30 +33,42 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiWEFVX3lxTE5lOGFwdk1JYVRlTUs1V3ZZSjhob19J...",
         "url": "https://news.google.com/rss/articles/CBMiWEFVX3lxTE5lOGFwdk1JYVRlTUs1V3ZZSjhob19JQ1RxZ2xxTThxM1Noejd2SHV3X1JURHlZQUJkdkJDUnRPUkRGM0pqT1dTUTF0QzZOOW82VVBMZ1h4T0Y?oc=5",
+        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 4,
+        "title": "サンポート高松で「カガワコーヒーマーケット」 50周年タウン誌が企画（みんなの経済新聞ネットワーク）",
+        "region": "全国",
+        "type": "マーケット",
+        "date": "Tue, 10 Nov 2026",
+        "location": "全国各地",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE83Y2hXOGZ1Vm02WXlHTmZ6VzJ2VU82...",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE83Y2hXOGZ1Vm02WXlHTmZ6VzJ2VU82dlFPdV9ENFdGVEdhc3RNNGRNaGxPRUZ6RDN1VDhxOHNVZWJWQy1NazNkSy1FaEpmbEd3LTAxa1pwNFBvZGx1SWVvRTFZOVBtV3huM0d0azJYWmFkaE1CdERIOEYzdEN4SDA?oc=5",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 5,
-        "title": "【ネスカフェ無料体験イベント】4つの部屋で見つける自分らしいコーヒー時間｜六本木ヒルズ",
-        "region": "全国",
+        "title": "本町公園で「和歌山珈琲市場」 初の3日間開催、県内外の200店が参加",
+        "region": "和歌山",
         "type": "フェスティバル",
-        "date": "Mon, 09 Nov 2026",
-        "location": "全国各地",
+        "date": "Wed, 11 Nov 2026",
+        "location": "和歌山 特設会場 / 周辺エリア",
         "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiS0FVX3lxTFBaaEpGZEpTM1NIaGhBSVI4SHlkTjN3...",
-        "url": "https://news.google.com/rss/articles/CBMiS0FVX3lxTFBaaEpGZEpTM1NIaGhBSVI4SHlkTjN3Um4wWi02c0JBNVRGMWRpc1FSd1hQRmVqaFBGbUhQaDlfc3Z2V0VPMFI0WWZ3QQ?oc=5",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE9SNUVYRWZ4RnFuVlhKY2pMR3QzcWVQ...",
+        "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9SNUVYRWZ4RnFuVlhKY2pMR3QzcWVQb01WWGFuZHhRU0hfVGUtajI4UkpJcVJGOTNyQUlBb1F6cm0xb3g5Z2FxM2xHTmt1NHRvVnd4STVIRTZXSmlxU2pEQXd4LVFtVUpCYjRJVFBn?oc=5",
         "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 6,
-        "title": "11/14(土)11/15(日)標高1,300mの天文台に全国から自家焙煎珈琲店が集う『長野コーヒーフェスティバル2026 in 野辺山』ロースター･フード･グッズなど約41店が集結するイベント！コーヒー飲み比べ企画やワークショップも開催＠長野県 南牧村 - Web",
-        "region": "長野",
+        "title": "アジア最大級のスペシャルティコーヒーイベント「SCAJ2026」に10万人超 4日間で過去最多の来場者",
+        "region": "千葉",
         "type": "フェスティバル",
-        "date": "Fri, 06 Nov 2026",
-        "location": "長野 特設会場 / 周辺エリア",
+        "date": "Wed, 11 Nov 2026",
+        "location": "千葉 特設会場 / 周辺エリア",
         "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE5YWDQ4SWFPTk9wajhFNjJPdHJ1RTct...",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5YWDQ4SWFPTk9wajhFNjJPdHJ1RTctc09JQUlKYVlMb3RjY2tqY1NuYmg0cjJCS0NxWWtMeS1ub0h4TTFsMjE0UmhHN1FJdw?oc=5",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SSWMzeF80UWhuTlhHa2NTYkFCM0t0...",
+        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SSWMzeF80UWhuTlhHa2NTYkFCM0t0TEVvSmNWMGJIVDUtLUZvdTBfZFNJX0RxRkJqcWt0STZBZDVUd0JDT0NNa2h1UllScGlId2JST2ZkcHhDUkpYQlhj?oc=5",
         "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -85,18 +85,6 @@
     },
     {
         "id": 8,
-        "title": "【THE COFFEE'S Chapter05～愛日～】福島県内外の多彩なコーヒー店など40店舗が福島市「四季の里」に集結",
-        "region": "福島",
-        "type": "フェスティバル",
-        "date": "Sat, 17 Oct 2026",
-        "location": "福島 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTFB0cmF2R3otZG1NdUpRQUhCcEgxQ1Zt...",
-        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB0cmF2R3otZG1NdUpRQUhCcEgxQ1ZtSzJQWEU1Y1ZJcUhqV1R5UG5oR0ZSWnJhaW5nZnB6WDVJZEYzTUpfLVFwUVRXbUFMUnJIOFNnOUZmeFBrd1VWV2VuYQ?oc=5",
-        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 9,
         "title": "世界遺産・勝連城跡に、使い捨てカップのないコーヒーイベントを！",
         "region": "全国",
         "type": "フェスティバル",
@@ -105,6 +93,18 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE1VM29mTmNISDRWSENxSkRWM0ZYSWZp...",
         "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE1VM29mTmNISDRWSENxSkRWM0ZYSWZpOGVaQjBXd1pER3h0Y2hSLXBOVXF2S0FJWElIZGluN0llSzAya3ZPWUFQUUs0T1VqNkNobEUw?oc=5",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 9,
+        "title": "【THE COFFEE'S Chapter05～愛日～】福島県内外の多彩なコーヒー店など40店舗が福島市「四季の里」に集結",
+        "region": "福島",
+        "type": "フェスティバル",
+        "date": "Sat, 17 Oct 2026",
+        "location": "福島 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTFB0cmF2R3otZG1NdUpRQUhCcEgxQ1Zt...",
+        "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTFB0cmF2R3otZG1NdUpRQUhCcEgxQ1ZtSzJQWEU1Y1ZJcUhqV1R5UG5oR0ZSWnJhaW5nZnB6WDVJZEYzTUpfLVFwUVRXbUFMUnJIOFNnOUZmeFBrd1VWV2VuYQ?oc=5",
         "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -133,14 +133,14 @@
     },
     {
         "id": 12,
-        "title": "4つの個性ある部屋が六本木ヒルズに出現！ 体験型イベント「うちにはバリスタがいる。byネスカフェ」11月14日(土)まで開催",
-        "region": "全国",
+        "title": "小山コーヒーフェス2026が開催！北海道から沖縄まで全国の人気コーヒーショップが栃木に集結！（Kae） - エキスパート",
+        "region": "北海道",
         "type": "フェスティバル",
-        "date": "Mon, 09 Nov 2026",
-        "location": "全国各地",
+        "date": "Sat, 07 Nov 2026",
+        "location": "北海道 特設会場 / 周辺エリア",
         "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiW0FVX3lxTE1hR2J0QmdUdVQ1eXRSNXgxVmtvZTdV...",
-        "url": "https://news.google.com/rss/articles/CBMiW0FVX3lxTE1hR2J0QmdUdVQ1eXRSNXgxVmtvZTdVOFJDa3hicl9OUlhxN20zZnFjVVRmS3FPelpkODdlU1FlUFIyUC1jYzBDNERzSFQ0SkQ3QXpPMDZPUDJaeG8?oc=5",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSWZDR3ZUSUhSVGxQa0NhLXRnVk5W...",
+        "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNSWZDR3ZUSUhSVGxQa0NhLXRnVk5WX2REREFMUnFBY1IzMFhtWXJiLTFqSV9ja2JaS2pMWXBnY2RweEZmU2UxMFhGSVVRQVFINGhzc1FVd3o1U1p0YldiRGxmRW1JNWdITVpkei1zOGtaam5RVDNFbi1NTF9MN291UUNHTl9KQjk2?oc=5",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -169,30 +169,6 @@
     },
     {
         "id": 15,
-        "title": "厚木で「コーヒー・フェス」開催、こだわり一杯堪能を １０月２４、２５日に（カナロコ by 神奈川新聞）",
-        "region": "神奈川",
-        "type": "フェスティバル",
-        "date": "Thu, 22 Oct 2026",
-        "location": "神奈川 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5vLWl0RUlXSVNtOXhfVHFXQzhxRGZJ...",
-        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5vLWl0RUlXSVNtOXhfVHFXQzhxRGZJa3doRXpVZUllbWxyQjktZ3gxRXAzQXJ2eDFhSk9lOWV4X25ickhXUVpfajgzMmJhTXVNSnVfV0VBNHBwQWV6azhZVEhpb2VVck1sQmNRX0RObWpFd0czOTg4c3JRSkNzdWc?oc=5",
-        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 16,
-        "title": "Campus Coffee Clubが湘南キャンパスで「フリーコーヒー」イベントを開催しました",
-        "region": "全国",
-        "type": "フェスティバル",
-        "date": "Tue, 21 Jul 2026",
-        "location": "全国各地",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiXkFVX3lxTFBKMVNKSkZEdjF2TUFNWjFaeUhrVG1C...",
-        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBKMVNKSkZEdjF2TUFNWjFaeUhrVG1CbmxSdTJ5azVQU1NwZ3k5RXJ6VzZfdnBTS3puOE9EdmV5VWRmZzJzaWgtWDAzSjhpbFNzNDk4bGdDZzJCamRsNnc?oc=5",
-        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 17,
         "title": "近江八幡の元小学校で県内外12店のコーヒー飲み比べイベント",
         "region": "全国",
         "type": "フェスティバル",
@@ -201,10 +177,10 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiV0FVX3lxTFBQSU1mQjFPMHQwRWJjUDBCel92M0xj...",
         "url": "https://news.google.com/rss/articles/CBMiV0FVX3lxTFBQSU1mQjFPMHQwRWJjUDBCel92M0xjcDdWWnhpTkxNSnBOX201OEVVSUFxcmQ5ajV4MG9GcjFHSDh3LXVZMjNibV9uVnVHWlREN2p5eW12VQ?oc=5",
-        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
     },
     {
-        "id": 18,
+        "id": 16,
         "title": "10月1日「国際コーヒーデー」に、名古屋で体感・思考するコーヒーイベント一般社団法人全日本コーヒー協会主催 『COFFEE DAYフェス2026 in名古屋～コーヒーの今と未来を考える～』に協力します",
         "region": "愛知",
         "type": "フェスティバル",
@@ -213,6 +189,30 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yMzcwZXM4elRybWZVRVhIMVFrTWlF...",
         "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE4yMzcwZXM4elRybWZVRVhIMVFrTWlFTWp3MVVCQTN6US10YWxXS0pJNWUtR3FEcHBLX1pqVVFnWFg1Nkx1V0NEeGZwRHoxWDlISE9XVm05X3M4RXA3bnJqMg?oc=5",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 17,
+        "title": "厚木で「コーヒー・フェス」開催、こだわり一杯堪能を １０月２４、２５日に（カナロコ by 神奈川新聞）",
+        "region": "神奈川",
+        "type": "フェスティバル",
+        "date": "Thu, 22 Oct 2026",
+        "location": "神奈川 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMif0FVX3lxTE5vLWl0RUlXSVNtOXhfVHFXQzhxRGZJ...",
+        "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5vLWl0RUlXSVNtOXhfVHFXQzhxRGZJa3doRXpVZUllbWxyQjktZ3gxRXAzQXJ2eDFhSk9lOWV4X25ickhXUVpfajgzMmJhTXVNSnVfV0VBNHBwQWV6azhZVEhpb2VVck1sQmNRX0RObWpFd0czOTg4c3JRSkNzdWc?oc=5",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 18,
+        "title": "福島・四季の里で「ザ・コーヒーズ」 県内外40店集結、開催5年目に",
+        "region": "福島",
+        "type": "フェスティバル",
+        "date": "Fri, 09 Oct 2026",
+        "location": "福島 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jejZkN0N4YUNvVVZXSmhucjFmeEVh...",
+        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jejZkN0N4YUNvVVZXSmhucjFmeEVhSkNfdUlUcWxSeXlsSGotMk1DaEM5eUhHbHQ2VzdGY1RaMUxQX1BiZDh2ZXJtYm5FVlBTODRySXZB?oc=5",
         "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -229,18 +229,6 @@
     },
     {
         "id": 20,
-        "title": "福島・四季の里で「ザ・コーヒーズ」 県内外40店集結、開催5年目に",
-        "region": "福島",
-        "type": "フェスティバル",
-        "date": "Fri, 09 Oct 2026",
-        "location": "福島 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jejZkN0N4YUNvVVZXSmhucjFmeEVh...",
-        "url": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5jejZkN0N4YUNvVVZXSmhucjFmeEVhSkNfdUlUcWxSeXlsSGotMk1DaEM5eUhHbHQ2VzdGY1RaMUxQX1BiZDh2ZXJtYm5FVlBTODRySXZB?oc=5",
-        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 21,
         "title": "アジア最大級のコーヒーイベントで好評！かわいい缶に入った「illyコーヒー」がおいしすぎる！",
         "region": "全国",
         "type": "フェスティバル",
@@ -249,6 +237,18 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMFBJOUh1Tzd3TlplSXNqakQ1YTJt...",
         "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMFBJOUh1Tzd3TlplSXNqakQ1YTJtU0VERUQtZnA1ZTEwaUlXeVBoMVZkQWE4SjFneV9RU3pHT2ozOWpQLWpWOHczQ3dObU8wbkhYWjh5Tzk4VFF3RUxQY2N0dG5vb2FCUkRfcWVWOW1uRWRHVTN3WWx4Vm53bXFEb0E1WXVEbUJQ?oc=5",
+        "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 21,
+        "title": "東海エリア最大級のコーヒーイベント「珈琲博覧日」久屋大通で11月3日に開催",
+        "region": "愛知",
+        "type": "フェスティバル",
+        "date": "Mon, 02 Nov 2026",
+        "location": "愛知 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiT0FVX3lxTFBsbUhvNGlEaVJZdjR5SzF0WXZlcHVR...",
+        "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTFBsbUhvNGlEaVJZdjR5SzF0WXZlcHVRcWNQWlZlT0puQnBFWUJIdkdNN3N2MkpsQTdWbmZMcTVOSjR0R2p3cERlOUViV0o0LXM?oc=5",
         "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -265,6 +265,18 @@
     },
     {
         "id": 23,
+        "title": "Campus Coffee Clubが湘南キャンパスで「フリーコーヒー」イベントを開催しました",
+        "region": "全国",
+        "type": "フェスティバル",
+        "date": "Tue, 21 Jul 2026",
+        "location": "全国各地",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiXkFVX3lxTFBKMVNKSkZEdjF2TUFNWjFaeUhrVG1C...",
+        "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBKMVNKSkZEdjF2TUFNWjFaeUhrVG1CbmxSdTJ5azVQU1NwZ3k5RXJ6VzZfdnBTS3puOE9EdmV5VWRmZzJzaWgtWDAzSjhpbFNzNDk4bGdDZzJCamRsNnc?oc=5",
+        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 24,
         "title": "人気インフルエンサー15人考案“割って楽しむ”濃縮コーヒーのアレンジ体験が原宿に集結",
         "region": "全国",
         "type": "フェスティバル",
@@ -273,46 +285,10 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE5hMWtBdHZSRTZHc0dCbEJXM1RvZVht...",
         "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5hMWtBdHZSRTZHc0dCbEJXM1RvZVhtb1QtNHRBVnY1a1EwLVdiX0hMV3ZhLWt0RFhzSk9STTRHMC1zQzM4M1dhZTRRQ1RPY1VUajQydWY3a05BamJfZGh0WGtKUG1ERC03cjZqWlRn?oc=5",
-        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 24,
-        "title": "Spotify×スターバックスコラボレーション コーヒーと音楽を楽しむイベント『Brew to the Beat Fest』スターバックス リザーブ® ロースタリー 東京にて8月28日（金）開催次世代アーティスト8組が登場し、コーヒーからインスパイアされた新曲を初披露！",
-        "region": "東京",
-        "type": "フェスティバル",
-        "date": "Fri, 24 Jul 2026",
-        "location": "東京 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xUVBlTC10eGFCeUFsVlEwTlhiUk1l...",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xUVBlTC10eGFCeUFsVlEwTlhiUk1lZ3VxWnVFd0VkSWhERlNZVzhsQmo4eUxSY2pvMVdlc0VxTkZaclVGM1Y1WFFITE45Ykt6alhKUE5JdHlXdXBBTmM1cW9kZW93N1E?oc=5",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 25,
-        "title": "5/31(日)『古本と珈琲と青空レストラン』駅近の公園に本屋とコーヒー店、さらにはパン･焼き菓子･お米のお菓子･台湾ごはん･カレーのお店など約28店が集う人気イベントが開催＠長野県小諸市 - Web",
-        "region": "長野",
-        "type": "フェスティバル",
-        "date": "Mon, 25 May 2026",
-        "location": "長野 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiTkFVX3lxTE9LUGJpbEVURDRVeFFGN1Bub1ZVMHhw...",
-        "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE9LUGJpbEVURDRVeFFGN1Bub1ZVMHhwV2JXTmVUaEZwa1ZFZUh3TTZPRVJLT3hXZU1sMnc4VndFcDlyS01lWVpTeDdKYXJRUQ?oc=5",
-        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 26,
-        "title": "【入場無料】“コーヒー×アート×蚤の市”の融合『神戸 蚤の市×KOBE COFFEE WEEKEND』 | EVENT : TOTTEI",
-        "region": "兵庫",
-        "type": "フェスティバル",
-        "date": "Sat, 28 Feb 2026",
-        "location": "兵庫 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE5vUWlTTzVUZFlUWEVhaEdXVkN6SkRK...",
-        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5vUWlTTzVUZFlUWEVhaEdXVkN6SkRKVmc1M0llOWdvUE5NT0d3OTdLV3Vja0VSWjcxbGJMUDJQVXJpbm1GaHd3b19Jc2tFQzFKQ1dJ?oc=5",
-        "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 27,
         "title": "“まだ知らないコーヒーの楽しさ”に出会える無料イベント『UCCカプセル珈琲店』が期間限定でオープン",
         "region": "全国",
         "type": "フェスティバル",
@@ -321,6 +297,30 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE53cTB3TzIxVnAycmJIVFNnWEVDOUl6...",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE53cTB3TzIxVnAycmJIVFNnWEVDOUl6aVlJUUpVcjVUS2NERmF0VW56RHRZS2V2aDJta1RUWjBnT3BuTDQ0ZkpYR0p1SDdpTHhxZGxpWkRPWTQyWU5xSmQzTVRfWmI?oc=5",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 26,
+        "title": "Spotify×スターバックスコラボレーション コーヒーと音楽を楽しむイベント『Brew to the Beat Fest』スターバックス リザーブ® ロースタリー 東京にて8月28日（金）開催次世代アーティスト8組が登場し、コーヒーからインスパイアされた新曲を初披露！",
+        "region": "東京",
+        "type": "フェスティバル",
+        "date": "Fri, 24 Jul 2026",
+        "location": "東京 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xUVBlTC10eGFCeUFsVlEwTlhiUk1l...",
+        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE0xUVBlTC10eGFCeUFsVlEwTlhiUk1lZ3VxWnVFd0VkSWhERlNZVzhsQmo4eUxSY2pvMVdlc0VxTkZaclVGM1Y1WFFITE45Ykt6alhKUE5JdHlXdXBBTmM1cW9kZW93N1E?oc=5",
+        "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 27,
+        "title": "【入場無料】“コーヒー×アート×蚤の市”の融合『神戸 蚤の市×KOBE COFFEE WEEKEND』 | EVENT : TOTTEI",
+        "region": "兵庫",
+        "type": "フェスティバル",
+        "date": "Sat, 28 Feb 2026",
+        "location": "兵庫 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiU0FVX3lxTE5vUWlTTzVUZFlUWEVhaEdXVkN6SkRK...",
+        "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTE5vUWlTTzVUZFlUWEVhaEdXVkN6SkRKVmc1M0llOWdvUE5NT0d3OTdLV3Vja0VSWjcxbGJMUDJQVXJpbm1GaHd3b19Jc2tFQzFKQ1dJ?oc=5",
         "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -337,6 +337,18 @@
     },
     {
         "id": 29,
+        "title": "デロンギ・ジャパンがアジア最大級のスペシャルティコーヒーイベント「SCAJ 2026」に業務用大型全自動コーヒーマシン「エバシス」を出展出展期間：2026年10月14日（水）～ 16日（金）",
+        "region": "全国",
+        "type": "フェスティバル",
+        "date": "Tue, 06 Oct 2026",
+        "location": "全国各地",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BaVAzT1E1OHRHQXVOQ2VfZW9fWUNR...",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE1BaVAzT1E1OHRHQXVOQ2VfZW9fWUNRUmptTnRySWJhd3AxMHdadDNpc1ZmRFh0emFRNFFwaDg3OFp1YWYwdTVLbERjOWJ3aWdNYlRDOA?oc=5",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 30,
         "title": "働く人の8割超（81.4%）が「血糖値ケア」を意識せず『UCC ＆Healthy』シリーズ体験イベント「食事のレシートがコーヒーに！血糖値レシート交換所」を期間限定OPEN！東京国際フォーラム 地上広場にて10月20日・21日の2日間開催",
         "region": "東京",
         "type": "フェスティバル",
@@ -345,10 +357,10 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZkFVX3lxTE54cldGQU9Rd1JzUXM4MGg5ZVlPV1ZE...",
         "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE54cldGQU9Rd1JzUXM4MGg5ZVlPV1ZEdUgxeFVlQzd5NkVSV0JfWnZ1bHRHRXpFako4Q2JPSnpObG9ZRzZtUi0yWWQySzhFMi1tQ3JNQzFuWHF2T2g1WWF2UC1XU2N5dw?oc=5",
-        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+        "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
     },
     {
-        "id": 30,
+        "id": 31,
         "title": "「NESCAFÉ APARTMENT ＃隣人と溶けるアイスコーヒー」2026年4月28日（火）から5月6日（水）まで開催",
         "region": "全国",
         "type": "フェスティバル",
@@ -357,10 +369,10 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMibkFVX3lxTE5HMmVkTFVGNEl2dUwwTlJvbmV4Rk5J...",
         "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5HMmVkTFVGNEl2dUwwTlJvbmV4Rk5JeHVDQnRQaU5BUktfUmhKTkJ1LWlGaEJRT05wajZjYTR2MWV6RFA4LUZtWjdyLUZjQnVKdHB2cVBFNlg1aVFZTV9ZMWdPSkZ4eTE4S0YzNGpn?oc=5",
-        "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
+        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
     },
     {
-        "id": 31,
+        "id": 32,
         "title": "「国分首都圏×三本珈琲×鎌倉市民」 1杯のコーヒーから始まる、 まちぐるみのフェアトレード・アクション",
         "region": "全国",
         "type": "フェスティバル",
@@ -369,34 +381,10 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMigwFBVV95cUxPbmVKRVBxZmRBZXJlTklDVzhCQzJD...",
         "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxPbmVKRVBxZmRBZXJlTklDVzhCQzJDZVpEZ1JMRnlYNWltNFZUenBFV0N4clhEY2V1dFRLdHZUX3pxTWlxNGg5NDY2QTI1X2J0a2RjMG5ETUs5VXVmajlIbkJ0R0Nnb2hFbTlXUThNTGtGNzJoV0QxM1J2ejZncnBWNXdBWQ?oc=5",
-        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 32,
-        "title": "京都市内のコーヒー店14店舗が参加！飲み比べイベント『COFFEE HOLIC #6』が開催／京都市京セラ美術館、他",
-        "region": "京都",
-        "type": "フェスティバル",
-        "date": "Sun, 01 Feb 2026",
-        "location": "京都 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFBYMVdMTWdXQlg0aEJzV19aenJSTjV5...",
-        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBYMVdMTWdXQlg0aEJzV19aenJSTjV5TjhhYlV2bjFqWGFoSDd2RHhwUmExb0dlaGJlTVEwR0dqSERDTjl2LTRuUl9tZXFGbG5VYW40OWZlLTIzREMxcXlKZGFJZDU3SVUz?oc=5",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 33,
-        "title": "「Fukuoka Coffee Suntour（福岡コーヒーサンツアー）」【大濠・舞鶴エリア】2026年 ～「同じ豆から、無限の一杯を。」をコンセプトに大濠・舞鶴エリアを巡ってコーヒーの奥深さを堪能するイベント！",
-        "region": "福岡",
-        "type": "フェスティバル",
-        "date": "Fri, 13 Feb 2026",
-        "location": "福岡 特設会場 / 周辺エリア",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiSkFVX3lxTE41Y29DOGozMU1jNVotRUJ3WHJHOVJi...",
-        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE41Y29DOGozMU1jNVotRUJ3WHJHOVJiRDZuaDN1Ujc1SXhFU2ZQUldMZWQ3by1RSng0ZHVidkhYN2xlTUluQWQ2a2ZR?oc=5",
-        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 34,
         "title": "開催の背景：行列を生んだ「バリスタのいないカフェ」が今年も登場",
         "region": "全国",
         "type": "フェスティバル",
@@ -405,18 +393,30 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE13VnBfNTNibzdwOUV3cGZnc1JHYm10...",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE13VnBfNTNibzdwOUV3cGZnc1JHYm10NWFPTFNSVDlMam82TXZBa3ZuWllTYUZLWmJlUHNqaUc5V1pZUkRpRFVXczJtZzhDRTFXeTYwd3YtSHRqNG1qdXdwYlpmQWU?oc=5",
+        "image": "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 34,
+        "title": "京都市内のコーヒー店14店舗が参加！飲み比べイベント『COFFEE HOLIC #6』が開催／京都市京セラ美術館、他",
+        "region": "京都",
+        "type": "フェスティバル",
+        "date": "Sun, 01 Feb 2026",
+        "location": "京都 特設会場 / 周辺エリア",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiaEFVX3lxTFBYMVdMTWdXQlg0aEJzV19aenJSTjV5...",
+        "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTFBYMVdMTWdXQlg0aEJzV19aenJSTjV5TjhhYlV2bjFqWGFoSDd2RHhwUmExb0dlaGJlTVEwR0dqSERDTjl2LTRuUl9tZXFGbG5VYW40OWZlLTIzREMxcXlKZGFJZDU3SVUz?oc=5",
         "image": "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80"
     },
     {
         "id": 35,
-        "title": "同じ豆なのに異なる味 イベント「コーヒーホリック」 京都で開催中 [京都府]",
-        "region": "京都",
+        "title": "「Fukuoka Coffee Suntour（福岡コーヒーサンツアー）」【大濠・舞鶴エリア】2026年 ～「同じ豆から、無限の一杯を。」をコンセプトに大濠・舞鶴エリアを巡ってコーヒーの奥深さを堪能するイベント！",
+        "region": "福岡",
         "type": "フェスティバル",
         "date": "Fri, 13 Feb 2026",
-        "location": "京都 特設会場 / 周辺エリア",
+        "location": "福岡 特設会場 / 周辺エリア",
         "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ycjQ5bXhEa3dqMzJBYlBnMk5qNG5K...",
-        "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1ycjQ5bXhEa3dqMzJBYlBnMk5qNG5KREFaS3BFOVRJVE9KYzdOUmlndS1zTUQ1Q0FHMi1SbGNHM0s5TmRXc0JuMU9sTHpGQUdsX1ptQ1VJWE1yNldzck5WaU56aDJzVmM?oc=5",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiSkFVX3lxTE41Y29DOGozMU1jNVotRUJ3WHJHOVJi...",
+        "url": "https://news.google.com/rss/articles/CBMiSkFVX3lxTE41Y29DOGozMU1jNVotRUJ3WHJHOVJiRDZuaDN1Ujc1SXhFU2ZQUldMZWQ3by1RSng0ZHVidkhYN2xlTUluQWQ2a2ZR?oc=5",
         "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
     },
     {
@@ -457,6 +457,18 @@
     },
     {
         "id": 39,
+        "title": "親子で楽しめるコーヒーフェスティバルを開催！限定ブレンド付きチケットも！湘南エリアのコーヒーがテラスモール湘南に一堂に集結「湘南海街珈琲祭2026」開催決定！",
+        "region": "全国",
+        "type": "フェスティバル",
+        "date": "Thu, 27 Aug 2026",
+        "location": "全国各地",
+        "organizer": "自動巡回クローラー",
+        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiakFVX3lxTE0zeUJiUkwtUmJYNTctdGtLNEtDbE83...",
+        "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE0zeUJiUkwtUmJYNTctdGtLNEtDbE83RUlzRl9tdFU5UnprcUo1QUh2NFdOYTdnWEhPY2FfLTFNUGNLQ3hFcHFsUzVFODJTWm9OdGNuaFVLZW5zdUstZGp1aUlwcV9DV0lkMlE?oc=5",
+        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+        "id": 40,
         "title": "ライトに、ディープに、コーヒーを～コーヒー初心者から愛好家まで楽しめる、体験型特別イベント「UCC COFFEE ACADEMY FESTIVAL in TOKYO」5月29日・30日開催",
         "region": "全国",
         "type": "フェスティバル",
@@ -465,18 +477,6 @@
         "organizer": "自動巡回クローラー",
         "desc": "<a href=\"https://news.google.com/rss/articles/CBMiZEFVX3lxTE1pcUttdjA2UFJaSzhiall3b3hpWkN5...",
         "url": "https://news.google.com/rss/articles/CBMiZEFVX3lxTE1pcUttdjA2UFJaSzhiall3b3hpWkN5Q1ZSVjB0Qm1LamRqSEJ6SU5Sd2EyUlBHdnN5b014cERObVg2cUU0R04yempFZ3NBUmcwUlIzNWFlVGxyVXlsWGJhNzN5cVY?oc=5",
-        "image": "https://images.unsplash.com/photo-1447933601403-0c6688de566e?auto=format&fit=crop&w=600&q=80"
-    },
-    {
-        "id": 40,
-        "title": "隅田公園で「すみだコーヒーフェス」 32店集結、秋に続き2日間開催へ",
-        "region": "全国",
-        "type": "フェスティバル",
-        "date": "Fri, 06 Feb 2026",
-        "location": "全国各地",
-        "organizer": "自動巡回クローラー",
-        "desc": "<a href=\"https://news.google.com/rss/articles/CBMiUkFVX3lxTFBQWnd6UlFKckFZdVJWWjhpazhXcmh4...",
-        "url": "https://news.google.com/rss/articles/CBMiUkFVX3lxTFBQWnd6UlFKckFZdVJWWjhpazhXcmh4RFFHNmZpZ3VpV2x5aW9vS2xhYVBmWW5DUGpmNWFaY2pQUG5INUNGZkpleFVoQkRMTkRpblE?oc=5",
         "image": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80"
     }
 ]
